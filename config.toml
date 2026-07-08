@@ -1,4 +1,4 @@
-baseURL = " https://huypg2.github.io/FCAJ-Workshop/"
+baseURL = "https://huypg2.github.io/FCAJ-Workshop/"
 languageCode = "vi-vn"
 title = "Báo cáo thực tập"
 defaultContentLanguage = "vi"
