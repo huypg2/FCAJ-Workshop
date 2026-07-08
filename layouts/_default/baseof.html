@@ -2,31 +2,85 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>{{ .Title }} - {{ .Site.Title }}</title>
+  <title>{{ .Title }} :: {{ .Site.Title }}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
 </head>
+
 <body>
-  <div class="layout">
-    <aside class="sidebar">
-      <div class="logo">
-        <a href="{{ "/" | relURL }}">AWS Workshop</a>
+  <aside class="sidebar">
+    <div class="logo">
+      <a href="{{ "/" | relURL }}">
+        <div class="aws-text">aws</div>
+        <div class="aws-smile"></div>
+      </a>
+    </div>
+
+    <div class="search-box">
+      <span>🔍</span>
+      <input type="text" id="searchInput" placeholder="Search...">
+      <span class="close">×</span>
+    </div>
+
+    <nav class="menu" id="menuList">
+      <a href="{{ "vi/1-worklog/" | relURL }}">1. Nhật ký công việc <span>✓</span></a>
+      <a href="{{ "vi/2-proposal/" | relURL }}">2. Bản đề xuất <span>✓</span></a>
+      <a href="{{ "vi/3-blogs/" | relURL }}">3. Các bài blogs đã dịch <span>✓</span></a>
+      <a href="{{ "vi/4-events/" | relURL }}">4. Các events đã tham gia <span>✓</span></a>
+
+      <a href="{{ "vi/5-workshop/" | relURL }}">5. Workshop <span>✓</span></a>
+      <a class="sub" href="{{ "vi/5-workshop/1-introduction/" | relURL }}">5.1. Giới thiệu</a>
+      <a class="sub" href="{{ "vi/5-workshop/2-preparation/" | relURL }}">5.2. Các bước chuẩn bị</a>
+      <a class="sub" href="{{ "vi/5-workshop/3-access-s3-from-vpc/" | relURL }}">5.3. Truy cập S3 từ VPC</a>
+      <a class="sub2" href="{{ "vi/5-workshop/3-access-s3-from-vpc/1-create-gateway-endpoint/" | relURL }}">5.3.1 Tạo một Gateway Endpoint</a>
+      <a class="sub2" href="{{ "vi/5-workshop/3-access-s3-from-vpc/2-check-gateway-endpoint/" | relURL }}">5.3.2 Kiểm tra Gateway Endpoint</a>
+      <a class="sub" href="{{ "vi/5-workshop/4-access-s3-from-traditional/" | relURL }}">5.4. Truy cập S3 từ môi trường truyền thống</a>
+      <a class="sub2" href="{{ "vi/5-workshop/4-access-s3-from-traditional/1-prepare-resource/" | relURL }}">5.4.1 Chuẩn bị tài nguyên</a>
+      <a class="sub2" href="{{ "vi/5-workshop/4-access-s3-from-traditional/2-create-s3-interface-endpoint/" | relURL }}">5.4.2 Tạo một S3 Interface endpoint</a>
+      <a class="sub2" href="{{ "vi/5-workshop/4-access-s3-from-traditional/3-check-interface-endpoint/" | relURL }}">5.4.3 Kiểm tra Interface Endpoint</a>
+      <a class="sub2" href="{{ "vi/5-workshop/4-access-s3-from-traditional/4-on-premises-dns/" | relURL }}">5.4.4 Mô phỏng On-premises DNS</a>
+      <a class="sub" href="{{ "vi/5-workshop/5-vpc-endpoint-policies/" | relURL }}">5.5 VPC Endpoint Policies</a>
+      <a class="sub" href="{{ "vi/5-workshop/6-clean-up/" | relURL }}">5.6. Dọn dẹp tài nguyên</a>
+
+      <a href="{{ "vi/6-review/" | relURL }}">6. Tự đánh giá <span>✓</span></a>
+      <a href="{{ "vi/7-feedback/" | relURL }}">7. Chia sẻ, đóng góp ý kiến <span>✓</span></a>
+    </nav>
+
+    <div class="more">
+      <div class="more-title">More</div>
+      <p>▣ AWS Study Group</p>
+
+      <div class="sidebar-bottom">
+        <p>▣ Tiếng Việt</p>
+        <p>↻ Clear History</p>
+
+        <br>
+
+        <small>Last Updated</small>
+        <strong>{{ .Site.Params.lastUpdated }}</strong>
+
+        <br><br>
+
+        <small>Team</small>
+        <em>First Cloud Journey</em>
       </div>
+    </div>
+  </aside>
 
-      <nav class="menu">
-        <a href="{{ "/" | relURL }}">Trang chủ</a>
-        {{ range .Site.Sections.ByWeight }}
-          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-          {{ range .Pages.ByWeight }}
-            <a class="child" href="{{ .RelPermalink }}">{{ .Title }}</a>
-          {{ end }}
-        {{ end }}
-      </nav>
-    </aside>
+  <main class="main">
+    <div class="breadcrumb">
+      ▣ &nbsp;
+      <a href="{{ "/" | relURL }}">Báo cáo thực tập</a>
+      <span> &gt; {{ .Title }}</span>
+    </div>
 
-    <main class="content">
-      {{ block "main" . }}{{ end }}
-    </main>
-  </div>
+    {{ block "main" . }}{{ end }}
+  </main>
+
+  <div class="arrow-left">‹</div>
+  <div class="arrow-right">›</div>
+
+  <script src="{{ "js/main.js" | relURL }}"></script>
 </body>
 </html>
