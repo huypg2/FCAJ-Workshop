@@ -7,43 +7,58 @@ weight: 7
 Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
 {{% /warning %}}
 
-> Tại đây bạn có thể tự do đóng góp ý kiến cá nhân về những trải nghiệm khi tham gia chương trình First Cloud Journey, giúp team FCJ cải thiện những vấn đề còn thiếu sót dựa trên các hạng mục sau:
+Tại đây, em chia sẻ một số cảm nhận cá nhân sau khi tham gia chương trình First Cloud Journey. Những ý kiến này nhằm góp phần giúp chương trình ngày càng phù hợp và hỗ trợ thực tập sinh tốt hơn.
 
 ## Đánh giá chung
 
 ### 1. Môi trường làm việc
 
-Môi trường làm việc rất thân thiện và cởi mở. Các thành viên trong FCJ luôn sẵn sàng hỗ trợ khi mình gặp khó khăn, kể cả ngoài giờ làm việc. Không gian làm việc gọn gàng, thoải mái, giúp mình tập trung tốt hơn. Tuy nhiên, mình nghĩ có thể bổ sung thêm một số buổi giao lưu hoặc team bonding để mọi người hiểu nhau hơn.
+Môi trường làm việc khá thân thiện và thoải mái. Các anh chị trong team sẵn sàng hỗ trợ khi em gặp khó khăn trong quá trình thực hiện công việc. Không khí làm việc không quá áp lực, giúp em dễ trao đổi và học hỏi hơn.
+
+Tuy nhiên, chương trình có thể tổ chức thêm một số buổi gặp gỡ hoặc chia sẻ giữa các thực tập sinh để mọi người có cơ hội làm quen và hỗ trợ nhau tốt hơn.
 
 ### 2. Sự hỗ trợ của mentor / team admin
 
-Mentor hướng dẫn rất chi tiết, giải thích rõ ràng khi mình chưa hiểu và luôn khuyến khích mình đặt câu hỏi. Team admin hỗ trợ các thủ tục, tài liệu và tạo điều kiện để mình làm việc thuận lợi. Mình đánh giá cao việc mentor cho phép mình thử và tự xử lý vấn đề thay vì chỉ đưa đáp án.
+Mentor hỗ trợ nhiệt tình, giải thích rõ những phần em chưa hiểu và hướng dẫn em cách tự tìm hiểu vấn đề. Điều này giúp em chủ động hơn trong quá trình học và làm việc.
+
+Team admin cũng hỗ trợ tốt về thông tin, tài liệu và các vấn đề liên quan trong suốt quá trình tham gia chương trình.
 
 ### 3. Sự phù hợp giữa công việc và chuyên ngành học
 
-Công việc mình được giao phù hợp với kiến thức mình đã học ở trường, đồng thời mở rộng thêm những mảng mới mà mình chưa từng được tiếp cận. Nhờ vậy, mình vừa củng cố kiến thức nền tảng, vừa học thêm kỹ năng thực tế.
+Các công việc được giao có liên quan đến chuyên ngành em đang học. Nhờ đó, em có thể áp dụng một phần kiến thức đã học vào thực tế.
 
-### 4. Cơ hội học hỏi & phát triển kỹ năng
+Ngoài ra, em cũng được tiếp cận thêm nhiều kiến thức mới về cloud, AWS và cách triển khai nội dung theo dạng workshop.
 
-Trong quá trình thực tập, mình học được nhiều kỹ năng mới như sử dụng công cụ quản lý dự án, kỹ năng làm việc nhóm, và cả cách giao tiếp chuyên nghiệp trong môi trường công ty. Mentor cũng chia sẻ nhiều kinh nghiệm thực tế giúp mình định hướng tốt hơn cho sự nghiệp.
+### 4. Cơ hội học hỏi và phát triển kỹ năng
 
-### 5. Văn hóa & tinh thần đồng đội
+Trong quá trình tham gia, em học được thêm cách làm việc với GitHub, cách trình bày tài liệu, cách tổ chức nội dung và cách tìm hiểu dịch vụ AWS.
 
-Văn hóa công ty rất tích cực: mọi người tôn trọng lẫn nhau, làm việc nghiêm túc nhưng vẫn vui vẻ. Khi có dự án gấp, mọi người cùng nhau cố gắng, hỗ trợ không phân biệt vị trí. Điều này giúp mình cảm thấy mình là một phần của tập thể, dù chỉ là thực tập sinh.
+Bên cạnh kiến thức chuyên môn, em cũng rèn luyện thêm kỹ năng tự học, kỹ năng ghi chú, kỹ năng trình bày và kỹ năng xử lý lỗi khi làm việc.
 
-### 6. Chính sách / phúc lợi cho thực tập sinh
+### 5. Văn hóa và tinh thần đồng đội
 
-Chính sách dành cho thực tập sinh khá hợp lý. Mình được hỗ trợ trong quá trình làm việc, được hướng dẫn và được tiếp cận với tài liệu cần thiết. Nếu có thể, công ty nên bổ sung thêm một số buổi định hướng nghề nghiệp hoặc chia sẻ kinh nghiệm từ các anh chị đi trước.
+Mọi người trong chương trình có tinh thần hỗ trợ nhau tốt. Khi gặp lỗi hoặc chưa hiểu nội dung nào đó, em có thể hỏi và nhận được sự giúp đỡ.
+
+Điều này giúp em cảm thấy dễ hòa nhập hơn, dù bản thân vẫn còn nhiều điểm cần học thêm.
+
+### 6. Chính sách và hỗ trợ cho thực tập sinh
+
+Chương trình có sự hỗ trợ phù hợp cho thực tập sinh. Em được cung cấp tài liệu, định hướng công việc và có người hướng dẫn trong quá trình thực hiện.
+
+Theo em, chương trình có thể bổ sung thêm các buổi hướng dẫn ngắn theo từng giai đoạn để thực tập sinh biết rõ mình cần làm gì và cần hoàn thành nội dung nào.
 
 ## Góp ý cải thiện
 
-Theo mình, chương trình có thể cải thiện thêm ở một số điểm như:
+Theo em, chương trình có thể cải thiện thêm một số điểm sau:
 
-- Có lịch trình thực tập rõ ràng hơn theo từng giai đoạn.
-- Bổ sung thêm tài liệu hướng dẫn cho người mới.
-- Có thêm buổi review định kỳ để thực tập sinh biết mình cần cải thiện gì.
-- Tổ chức thêm hoạt động chia sẻ kiến thức giữa các nhóm.
+- Có lịch trình thực tập rõ ràng hơn theo từng tuần hoặc từng giai đoạn.
+- Bổ sung thêm tài liệu hướng dẫn cho người mới bắt đầu.
+- Có thêm buổi review định kỳ để thực tập sinh biết mình làm đúng hay chưa.
+- Tạo thêm các buổi chia sẻ kinh nghiệm từ mentor hoặc các anh chị đã hoàn thành chương trình.
+- Có mẫu hướng dẫn trình bày báo cáo để thực tập sinh dễ làm theo hơn.
 
 ## Kết luận
 
-Nhìn chung, quá trình tham gia chương trình First Cloud Journey mang lại cho mình nhiều trải nghiệm hữu ích. Mình có cơ hội học hỏi kiến thức mới, làm quen với môi trường làm việc thực tế và cải thiện nhiều kỹ năng cá nhân. Đây là một trải nghiệm đáng giá và giúp mình có thêm định hướng rõ ràng hơn trong tương lai.
+Nhìn chung, quá trình tham gia First Cloud Journey giúp em học thêm nhiều kiến thức mới và hiểu hơn về môi trường làm việc thực tế. Em có cơ hội rèn luyện kỹ năng tự học, kỹ năng trình bày và làm quen với các dịch vụ AWS.
+
+Đây là một trải nghiệm hữu ích, giúp em có thêm định hướng rõ hơn cho việc học tập và phát triển kỹ năng trong thời gian tới.
