@@ -7,3 +7,8 @@ defaultContentLanguage = "vi"
   author = "First Cloud Journey"
   description = "Báo cáo thực tập AWS"
   lastUpdated = "08/07/2026"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
