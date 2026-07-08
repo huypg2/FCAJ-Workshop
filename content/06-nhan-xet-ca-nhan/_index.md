@@ -4,8 +4,7 @@ weight: 6
 ---
 
 {{% warning %}}
-Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /warning %}}
+Toàn bộ nội dung bên dưới chỉ mang tính chất định hướng và tham khảo. Bạn vui lòng tự diễn đạt lại bằng văn phong của mình, tuyệt đối không sao chép y nguyên bất kỳ đoạn nào (bao gồm cả dòng nhắc nhở này) vào bài báo cáo chính thức.{{% /warning %}}
 
 <p class="small-text">
 Trong suốt thời gian thực tập tại <strong>[Tên công ty/tổ chức]</strong> từ <strong>[Ngày bắt đầu]</strong> đến <strong>[Ngày kết thúc]</strong>, tôi đã có cơ hội học hỏi, rèn luyện và áp dụng kiến thức đã được trang bị tại trường vào môi trường làm việc thực tế.
