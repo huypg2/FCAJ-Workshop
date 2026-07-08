@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ .Title }} - {{ .Site.Title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="logo">
+        <a href="{{ "/" | relURL }}">AWS Workshop</a>
+      </div>
+
+      <nav class="menu">
+        <a href="{{ "/" | relURL }}">Trang chủ</a>
+        {{ range .Site.Sections.ByWeight }}
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          {{ range .Pages.ByWeight }}
+            <a class="child" href="{{ .RelPermalink }}">{{ .Title }}</a>
+          {{ end }}
+        {{ end }}
+      </nav>
+    </aside>
+
+    <main class="content">
+      {{ block "main" . }}{{ end }}
+    </main>
+  </div>
+</body>
+</html>
