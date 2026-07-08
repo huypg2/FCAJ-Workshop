@@ -1,18 +1,6 @@
 {{ define "main" }}
   <article class="content">
     <h1>{{ upper .Title }}</h1>
-
     {{ .Content }}
-
-    {{ if .Pages }}
-      <div class="page-list">
-        {{ range .Pages.ByWeight }}
-          <a href="{{ .RelPermalink }}" class="page-card">
-            <h3>{{ .Title }}</h3>
-            <p>Xem nội dung chi tiết</p>
-          </a>
-        {{ end }}
-      </div>
-    {{ end }}
   </article>
 {{ end }}
