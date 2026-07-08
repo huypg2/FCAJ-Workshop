@@ -9,6 +9,8 @@
 </head>
 
 <body>
+  {{ $section := .Section }}
+
   <aside class="sidebar">
     <div class="logo">
       <a href="{{ "/" | relURL }}">
@@ -18,33 +20,83 @@
     </div>
 
     <div class="search-box">
-      <span>🔍</span>
+      <span class="search-icon">🔍</span>
       <input type="text" id="searchInput" placeholder="Search...">
       <span class="close">×</span>
     </div>
 
     <nav class="menu" id="menuList">
-      <a href="{{ "vi/1-worklog/" | relURL }}">1. Nhật ký công việc <span>✓</span></a>
-      <a href="{{ "vi/2-proposal/" | relURL }}">2. Bản đề xuất <span>✓</span></a>
-      <a href="{{ "vi/3-blogs/" | relURL }}">3. Các bài blogs đã dịch <span>✓</span></a>
-      <a href="{{ "vi/4-events/" | relURL }}">4. Các events đã tham gia <span>✓</span></a>
+      <a href="{{ "vi/1-worklog/" | relURL }}">
+        1. Nhật ký công việc <span>✓</span>
+      </a>
 
-      <a href="{{ "vi/5-workshop/" | relURL }}">5. Workshop <span>✓</span></a>
-      <a class="sub" href="{{ "vi/5-workshop/1-introduction/" | relURL }}">5.1. Giới thiệu</a>
-      <a class="sub" href="{{ "vi/5-workshop/2-preparation/" | relURL }}">5.2. Các bước chuẩn bị</a>
-      <a class="sub" href="{{ "vi/5-workshop/3-access-s3-from-vpc/" | relURL }}">5.3. Truy cập S3 từ VPC</a>
-      <a class="sub2" href="{{ "vi/5-workshop/3-access-s3-from-vpc/1-create-gateway-endpoint/" | relURL }}">5.3.1 Tạo một Gateway Endpoint</a>
-      <a class="sub2" href="{{ "vi/5-workshop/3-access-s3-from-vpc/2-check-gateway-endpoint/" | relURL }}">5.3.2 Kiểm tra Gateway Endpoint</a>
-      <a class="sub" href="{{ "vi/5-workshop/4-access-s3-from-traditional/" | relURL }}">5.4. Truy cập S3 từ môi trường truyền thống</a>
-      <a class="sub2" href="{{ "vi/5-workshop/4-access-s3-from-traditional/1-prepare-resource/" | relURL }}">5.4.1 Chuẩn bị tài nguyên</a>
-      <a class="sub2" href="{{ "vi/5-workshop/4-access-s3-from-traditional/2-create-s3-interface-endpoint/" | relURL }}">5.4.2 Tạo một S3 Interface endpoint</a>
-      <a class="sub2" href="{{ "vi/5-workshop/4-access-s3-from-traditional/3-check-interface-endpoint/" | relURL }}">5.4.3 Kiểm tra Interface Endpoint</a>
-      <a class="sub2" href="{{ "vi/5-workshop/4-access-s3-from-traditional/4-on-premises-dns/" | relURL }}">5.4.4 Mô phỏng On-premises DNS</a>
-      <a class="sub" href="{{ "vi/5-workshop/5-vpc-endpoint-policies/" | relURL }}">5.5 VPC Endpoint Policies</a>
-      <a class="sub" href="{{ "vi/5-workshop/6-clean-up/" | relURL }}">5.6. Dọn dẹp tài nguyên</a>
+      {{ if eq $section "1-worklog" }}
+        <a class="sub" href="{{ "vi/1-worklog/week-1/" | relURL }}">1.1. Worklog Tuần 1 <span>✓</span></a>
+        <a class="sub" href="{{ "vi/1-worklog/week-2/" | relURL }}">1.2. Worklog Tuần 2</a>
+        <a class="sub" href="{{ "vi/1-worklog/week-3/" | relURL }}">1.3. Worklog Tuần 3</a>
+        <a class="sub" href="{{ "vi/1-worklog/week-4/" | relURL }}">1.4. Worklog Tuần 4</a>
+        <a class="sub" href="{{ "vi/1-worklog/week-5/" | relURL }}">1.5. Worklog Tuần 5</a>
+        <a class="sub" href="{{ "vi/1-worklog/week-6/" | relURL }}">1.6. Worklog Tuần 6</a>
+        <a class="sub" href="{{ "vi/1-worklog/week-7/" | relURL }}">1.7. Worklog Tuần 7</a>
+        <a class="sub" href="{{ "vi/1-worklog/week-8/" | relURL }}">1.8. Worklog Tuần 8</a>
+        <a class="sub" href="{{ "vi/1-worklog/week-9/" | relURL }}">1.9. Worklog Tuần 9</a>
+        <a class="sub" href="{{ "vi/1-worklog/week-10/" | relURL }}">1.10. Worklog Tuần 10</a>
+        <a class="sub" href="{{ "vi/1-worklog/week-11/" | relURL }}">1.11. Worklog Tuần 11</a>
+        <a class="sub" href="{{ "vi/1-worklog/week-12/" | relURL }}">1.12. Worklog Tuần 12</a>
+      {{ end }}
 
-      <a href="{{ "vi/6-review/" | relURL }}">6. Tự đánh giá <span>✓</span></a>
-      <a href="{{ "vi/7-feedback/" | relURL }}">7. Chia sẻ, đóng góp ý kiến <span>✓</span></a>
+      <a href="{{ "vi/2-proposal/" | relURL }}">
+        2. Bản đề xuất <span>✓</span>
+      </a>
+
+      <a href="{{ "vi/3-blogs/" | relURL }}">
+        3. Các bài blogs đã dịch <span>✓</span>
+      </a>
+
+      {{ if eq $section "3-blogs" }}
+        <a class="sub" href="{{ "vi/3-blogs/blog-1/" | relURL }}">3.1. Blog 1 <span>✓</span></a>
+        <a class="sub" href="{{ "vi/3-blogs/blog-2/" | relURL }}">3.2. Blog 2</a>
+        <a class="sub" href="{{ "vi/3-blogs/blog-3/" | relURL }}">3.3. Blog 3</a>
+      {{ end }}
+
+      <a href="{{ "vi/4-events/" | relURL }}">
+        4. Các events đã tham gia <span>✓</span>
+      </a>
+
+      {{ if eq $section "4-events" }}
+        <a class="sub" href="{{ "vi/4-events/event-1/" | relURL }}">4.1. Event 1 <span>✓</span></a>
+        <a class="sub" href="{{ "vi/4-events/event-2/" | relURL }}">4.2. Event 2</a>
+        <a class="sub" href="{{ "vi/4-events/event-3/" | relURL }}">4.3. Event 3</a>
+      {{ end }}
+
+      <a href="{{ "vi/5-workshop/" | relURL }}">
+        5. Workshop <span>✓</span>
+      </a>
+
+      {{ if eq $section "5-workshop" }}
+        <a class="sub" href="{{ "vi/5-workshop/1-introduction/" | relURL }}">5.1. Giới thiệu <span>✓</span></a>
+        <a class="sub" href="{{ "vi/5-workshop/2-preparation/" | relURL }}">5.2. Các bước chuẩn bị <span>✓</span></a>
+        <a class="sub" href="{{ "vi/5-workshop/3-access-s3-from-vpc/" | relURL }}">5.3. Truy cập S3 từ VPC <span>✓</span></a>
+        <a class="sub2" href="{{ "vi/5-workshop/3-access-s3-from-vpc/1-create-gateway-endpoint/" | relURL }}">5.3.1 Tạo một Gateway Endpoint</a>
+        <a class="sub2" href="{{ "vi/5-workshop/3-access-s3-from-vpc/2-check-gateway-endpoint/" | relURL }}">5.3.2 Kiểm tra Gateway Endpoint</a>
+
+        <a class="sub" href="{{ "vi/5-workshop/4-access-s3-from-traditional/" | relURL }}">5.4. Truy cập S3 từ môi trường truyền thống</a>
+        <a class="sub2" href="{{ "vi/5-workshop/4-access-s3-from-traditional/1-prepare-resource/" | relURL }}">5.4.1 Chuẩn bị tài nguyên</a>
+        <a class="sub2" href="{{ "vi/5-workshop/4-access-s3-from-traditional/2-create-s3-interface-endpoint/" | relURL }}">5.4.2 Tạo một S3 Interface endpoint</a>
+        <a class="sub2" href="{{ "vi/5-workshop/4-access-s3-from-traditional/3-check-interface-endpoint/" | relURL }}">5.4.3 Kiểm tra Interface Endpoint</a>
+        <a class="sub2" href="{{ "vi/5-workshop/4-access-s3-from-traditional/4-on-premises-dns/" | relURL }}">5.4.4 Mô phỏng On-premises DNS</a>
+
+        <a class="sub" href="{{ "vi/5-workshop/5-vpc-endpoint-policies/" | relURL }}">5.5 VPC Endpoint Policies</a>
+        <a class="sub" href="{{ "vi/5-workshop/6-clean-up/" | relURL }}">5.6. Dọn dẹp tài nguyên</a>
+      {{ end }}
+
+      <a href="{{ "vi/6-review/" | relURL }}">
+        6. Tự đánh giá <span>✓</span>
+      </a>
+
+      <a href="{{ "vi/7-feedback/" | relURL }}">
+        7. Chia sẻ, đóng góp ý kiến <span>✓</span>
+      </a>
     </nav>
 
     <div class="more">
@@ -70,8 +122,17 @@
 
   <main class="main">
     <div class="breadcrumb">
-      ▣ &nbsp;
+      <span class="crumb-icon">▣</span>
+      <span class="crumb-separate"></span>
       <a href="{{ "/" | relURL }}">Báo cáo thực tập</a>
+
+      {{ range .Ancestors.Reverse }}
+        {{ if and (ne .Kind "home") (ne .Title "") }}
+          <span> &gt; </span>
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        {{ end }}
+      {{ end }}
+
       <span> &gt; {{ .Title }}</span>
     </div>
 
