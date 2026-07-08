@@ -1,0 +1,18 @@
+{{ define "main" }}
+  <h1>{{ .Title }}</h1>
+
+  <div class="article">
+    {{ .Content }}
+  </div>
+
+  {{ if .Pages }}
+    <div class="cards">
+      {{ range .Pages.ByWeight }}
+        <a class="card" href="{{ .RelPermalink }}">
+          <h3>{{ .Title }}</h3>
+          <p>Xem nội dung chi tiết</p>
+        </a>
+      {{ end }}
+    </div>
+  {{ end }}
+{{ end }}
