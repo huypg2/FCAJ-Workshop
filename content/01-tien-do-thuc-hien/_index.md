@@ -1,5 +1,5 @@
 ---
-title: "Nhật ký công việc"
+title: "Worklog"
 weight: 1
 ---
 
