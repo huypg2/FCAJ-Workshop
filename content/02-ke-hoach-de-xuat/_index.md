@@ -3,20 +3,54 @@ title: "Kế hoạch đề xuất"
 weight: 2
 ---
 
-# Kế hoạch đề xuất
+{{% warning %}}
+Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
+{{% /warning %}}
 
-## Mục tiêu
+<p class="intro-note">
+Tại phần này, bạn cần tóm tắt các nội dung trong workshop mà bạn dự tính sẽ làm.
+</p>
 
-Xây dựng một website trình bày quá trình học tập và thực hành AWS theo dạng workshop.
+# IOT WEATHER PLATFORM FOR LAB RESEARCH
 
-## Nội dung đề xuất
+## Giải pháp AWS Serverless hợp nhất cho giám sát thời tiết thời gian thực
 
-- Trình bày tiến độ làm việc theo tuần.
-- Tổng hợp bài viết tham khảo.
-- Ghi nhận các sự kiện đã tham gia.
-- Xây dựng nội dung thực hành AWS.
-- Tự đánh giá kết quả thực hiện.
+## 1. Tóm tắt điều hành
 
-## Kết quả mong muốn
+...
 
-Website có cấu trúc rõ ràng, dễ theo dõi và có thể triển khai bằng GitHub Pages.
+## 2. Tuyên bố vấn đề
+
+...
+
+## 3. Kiến trúc giải pháp
+
+...
+
+<div class="image-holder large">Khu vực sơ đồ kiến trúc / hình minh họa</div>
+
+### Dịch vụ AWS sử dụng
+
+- ...
+- ...
+- ...
+- ...
+
+### Thiết kế thành phần
+
+- ...
+- ...
+- ...
+- ...
+
+## 4. Triển khai kỹ thuật
+
+...
+
+## 5. Lộ trình & Mốc triển khai
+
+...
+
+## 6. Ước tính ngân sách
+
+...
