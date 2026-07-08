@@ -1,16 +1,75 @@
 ---
-title: "Tuần 2"
-weight: 2
+title: "Worklog Tuần 2"
+weight: 1
 ---
 
-# Tuần 2
+## Mục tiêu tuần 2:
 
-## Công việc đã thực hiện
+- ...
+- ...
+- ...
 
-- Tìm hiểu cấu trúc website dạng workshop.
-- Tham khảo cách tổ chức nội dung bằng Hugo.
-- Lên danh sách các mục cần xây dựng.
+## Các công việc cần triển khai trong tuần này:
 
-## Kết quả
+<table class="work-table">
+  <thead>
+    <tr>
+      <th>Ngày</th>
+      <th>Công việc</th>
+      <th>Ngày bắt đầu</th>
+      <th>Ngày hoàn thành</th>
+      <th>Nguồn tài liệu</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+  </tbody>
+</table>
 
-Có được bố cục tổng quan cho website.
+## Kết quả đạt được tuần 2:
+
+- ...
+- ...
+- ...
+
+<div class="image-holder large">Khu vực ảnh minh họa / ảnh chụp màn hình</div>
+
+- ...
+- ...
+- ...
+
+<div class="image-holder large">Khu vực ảnh minh họa / ảnh chụp màn hình</div>
