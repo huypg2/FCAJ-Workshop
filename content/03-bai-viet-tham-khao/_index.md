@@ -1,8 +1,27 @@
 ---
-title: "Bài viết tham khảo"
+title: "Các bài blogs đã dịch"
 weight: 3
 ---
 
-# Bài viết tham khảo
+{{% warning %}}
+Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
+{{% /warning %}}
 
-Mục này dùng để lưu lại các bài viết đã đọc, đã dịch hoặc đã tham khảo trong quá trình thực hiện.
+<p class="intro-note">
+Tại đây sẽ là phần liệt kê, giới thiệu các blogs mà bạn đã dịch.
+</p>
+
+<div class="blog-preview">
+  <h2><a href="./blog-1/">Blog 1 - ...</a></h2>
+  <p>Phần mô tả ngắn cho blog 1...</p>
+</div>
+
+<div class="blog-preview">
+  <h2><a href="./blog-2/">Blog 2 - ...</a></h2>
+  <p>Phần mô tả ngắn cho blog 2...</p>
+</div>
+
+<div class="blog-preview">
+  <h2><a href="./blog-3/">Blog 3 - ...</a></h2>
+  <p>Phần mô tả ngắn cho blog 3...</p>
+</div>
