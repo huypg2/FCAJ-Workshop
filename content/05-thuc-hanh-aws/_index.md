@@ -4,8 +4,7 @@ weight: 5
 ---
 
 {{% warning %}}
-Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /warning %}}
+Toàn bộ nội dung bên dưới chỉ mang tính chất định hướng và tham khảo. Bạn vui lòng tự diễn đạt lại bằng văn phong của mình, tuyệt đối không sao chép y nguyên bất kỳ đoạn nào (bao gồm cả dòng nhắc nhở này) vào bài báo cáo chính thức.{{% /warning %}}
 
 <div class="workshop-big-title">
 ĐẢM BẢO TRUY CẬP HYBRID AN TOÀN ĐẾN S3 BẰNG CÁCH SỬ DỤNG VPC ENDPOINT
