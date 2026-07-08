@@ -1,0 +1,8 @@
+baseURL = "/"
+languageCode = "vi-vn"
+title = "AWS Workshop"
+theme = ""
+
+[params]
+  description = "Trang ghi nhận quá trình học tập và thực hành AWS"
+  author = "Sinh viên thực hiện"
