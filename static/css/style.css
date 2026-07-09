@@ -24,6 +24,7 @@ body {
   overflow-y: auto;
   color: #d8dde6;
   z-index: 20;
+  transition: transform 0.25s ease;
 }
 
 .logo {
@@ -57,39 +58,73 @@ body {
 ========================= */
 
 .search-box {
+  position: relative;
   margin: 13px;
-  height: 34px;
+  height: 38px;
   background: #17212d;
   border: 1px solid #46627f;
   border-radius: 4px;
   display: flex;
   align-items: center;
-  padding: 0 8px;
 }
 
 .search-icon {
-  color: #8ca6c1;
-  font-size: 13px;
+  position: absolute;
+  left: 11px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #5d83aa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.search-icon svg {
+  width: 17px;
+  height: 17px;
 }
 
 .search-box input {
-  flex: 1;
+  width: 100%;
+  height: 100%;
+  padding: 0 36px 0 36px;
   background: transparent;
   border: none;
   outline: none;
   color: white;
-  font-size: 14px;
-  margin-left: 6px;
+  font-size: 15px;
 }
 
 .search-box input::placeholder {
   color: #c4ceda;
 }
 
+.clear-search {
+  position: absolute;
+  right: 9px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: transparent;
+  color: #5d83aa;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+  display: none;
+}
+
+.clear-search:hover {
+  color: white;
+}
+
+/* giữ lại nếu HTML cũ còn class close */
 .close {
   color: #6783a2;
   font-size: 22px;
   font-weight: bold;
+  cursor: pointer;
 }
 
 /* =========================
@@ -192,6 +227,7 @@ body {
   margin-left: 260px;
   padding: 34px 66px;
   min-height: 100vh;
+  transition: margin-left 0.25s ease;
 }
 
 .breadcrumb {
@@ -331,18 +367,46 @@ body {
   position: fixed;
   top: 50%;
   transform: translateY(-50%);
+  z-index: 9999;
+  border: none;
+  background: transparent;
   color: #ff9b25;
-  font-size: 80px;
+  font-size: 70px;
   font-weight: 300;
-  z-index: 10;
+  cursor: pointer;
+  padding: 4px 8px;
+  line-height: 1;
 }
 
 .arrow-left {
-  left: 275px;
+  left: 268px;
 }
 
 .arrow-right {
-  right: 25px;
+  left: 12px;
+  display: none;
+}
+
+.arrow-left:hover,
+.arrow-right:hover {
+  color: #ffb347;
+}
+
+/* khi đóng sidebar */
+body.sidebar-collapsed .sidebar {
+  transform: translateX(-100%);
+}
+
+body.sidebar-collapsed .main {
+  margin-left: 0;
+}
+
+body.sidebar-collapsed .arrow-left {
+  display: none;
+}
+
+body.sidebar-collapsed .arrow-right {
+  display: block;
 }
 
 /* =========================
@@ -588,6 +652,7 @@ body {
     position: relative;
     width: 100%;
     height: auto;
+    transform: none !important;
   }
 
   .main {
@@ -597,7 +662,7 @@ body {
 
   .arrow-left,
   .arrow-right {
-    display: none;
+    display: none !important;
   }
 
   .content h1 {
