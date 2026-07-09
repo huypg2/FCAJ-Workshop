@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // =========================
-  // ACTIVE MENU
+  // ACTIVE MENU + CHECK MARK
   // =========================
   const currentUrl = normalizePath(window.location.pathname);
 
@@ -59,6 +59,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (currentUrl === linkPath) {
       link.classList.add("active");
+
+      if (!link.querySelector("span")) {
+        const check = document.createElement("span");
+        check.textContent = "✓";
+        link.appendChild(check);
+      }
     }
   });
 
