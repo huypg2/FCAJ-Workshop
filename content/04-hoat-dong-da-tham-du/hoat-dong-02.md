@@ -4,8 +4,6 @@ date: 2026-07-09
 description: "Bài thu hoạch về sự kiện First Cloud AI Journey - Event 2"
 ---
 
-# Event 2: First Cloud AI Journey
-
 ## 1. Tổng quan về sự kiện
 
 Sự kiện **First Cloud AI Journey - Event 2** tập trung vào việc định hướng lộ trình học AWS, chia sẻ kinh nghiệm thực chiến từ Hackathon, tư duy phát triển bản thân và cách xây dựng sản phẩm công nghệ trên nền tảng Cloud.
