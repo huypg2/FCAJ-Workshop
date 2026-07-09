@@ -4,8 +4,6 @@ date: 2026-07-09
 description: "Bài thu hoạch về sự kiện First Cloud AI Journey"
 ---
 
-# Event 1: First Cloud AI Journey
-
 ## 1. Tổng quan về sự kiện
 
 Sự kiện **First Cloud AI Journey** chia sẻ kiến thức nền tảng về AI, Cloud, Prompt Engineering và cách ứng dụng AI vào học tập, công việc cũng như phát triển phần mềm.
