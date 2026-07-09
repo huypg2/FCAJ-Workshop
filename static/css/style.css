@@ -119,14 +119,6 @@ body {
   color: white;
 }
 
-/* giữ lại nếu HTML cũ còn class close */
-.close {
-  color: #6783a2;
-  font-size: 22px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
 /* =========================
    MENU
 ========================= */
@@ -139,7 +131,7 @@ body {
   display: block;
   color: #d6d9df;
   text-decoration: none;
-  padding: 10px 14px;
+  padding: 10px 38px 10px 14px;
   font-weight: 600;
   font-size: 15px;
   position: relative;
@@ -149,14 +141,22 @@ body {
 .menu a span {
   position: absolute;
   right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
   color: #2fa8ff;
   font-weight: bold;
+  font-size: 20px;
 }
 
 .menu a:hover,
 .menu a.active {
   background: white;
   color: #8c8c8c;
+}
+
+.menu a.active span {
+  color: #2fa8ff;
+  display: block;
 }
 
 .menu .sub {
@@ -174,7 +174,9 @@ body {
 }
 
 .menu .sub:hover,
-.menu .sub2:hover {
+.menu .sub2:hover,
+.menu .sub.active,
+.menu .sub2.active {
   background: white;
   color: #8c8c8c;
 }
@@ -392,7 +394,6 @@ body {
   color: #ffb347;
 }
 
-/* khi đóng sidebar */
 body.sidebar-collapsed .sidebar {
   transform: translateX(-100%);
 }
