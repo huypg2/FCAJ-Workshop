@@ -1,97 +1,59 @@
 ---
 title: "Event 1 - First Cloud AI Journey"
 date: 2026-07-09
-description: "Bài thu hoạch về sự kiện First Cloud AI Journey"
+description: "Bài thu hoạch ngắn gọn về sự kiện First Cloud AI Journey - Event 1"
 ---
 
-## 1. Tổng quan về sự kiện
+## 1. Tổng quan sự kiện
 
-Sự kiện **First Cloud AI Journey** chia sẻ kiến thức nền tảng về AI, Cloud, Prompt Engineering và cách ứng dụng AI vào học tập, công việc cũng như phát triển phần mềm.
+**First Cloud AI Journey - Event 1** là sự kiện chia sẻ về AI, Cloud, Prompt Engineering và cách ứng dụng AI trong học tập, công việc cũng như phát triển phần mềm. Sự kiện giúp người tham dự hiểu rõ hơn về vai trò của AI trong thời đại hiện nay và cách sử dụng AI hiệu quả hơn.
 
-Thông qua sự kiện, người tham dự hiểu rõ hơn cách AI đang thay đổi tư duy học tập, kỹ năng nghề nghiệp và quy trình xây dựng sản phẩm công nghệ. Ngoài ra, chương trình còn hướng dẫn cách giao tiếp hiệu quả với AI bằng prompt rõ ràng, có cấu trúc và tối ưu chi phí token.
+Ngoài kiến thức công nghệ, sự kiện còn nói về tư duy phát triển bản thân, thái độ nghề nghiệp và cách con người thích nghi khi AI ngày càng được sử dụng nhiều trong học tập và công việc.
 
-## 2. Các nội dung chia sẻ
+## 2. Nội dung chương trình
 
-Trong chương trình, các diễn giả đã trình bày nhiều chủ đề liên quan đến AI, Cloud và phát triển phần mềm.
+Trong sự kiện, các diễn giả đã chia sẻ nhiều chủ đề khác nhau.
 
-- **Huỳnh Hoàng Long** chia sẻ về cách mạng xã hội sử dụng các yếu tố tâm lý như dopamine, phản hồi tức thì và nỗi sợ mất mát để giữ sự chú ý của người dùng. Từ đó, nội dung được liên hệ đến việc tạo động lực học tập hiệu quả hơn.
+**Huỳnh Hoàng Long** chia sẻ về cách mạng xã hội thu hút sự chú ý của người dùng thông qua dopamine, phản hồi nhanh và tâm lý sợ mất mát. Từ đó, diễn giả liên hệ đến việc tạo động lực học tập hiệu quả hơn.
 
-- **Nguyễn Tuấn Thịnh** trình bày chủ đề **“Automated Prompt Engineering: Enhancing LLM Output Quality”**, tập trung vào kỹ thuật tối ưu prompt, Token Economics, công cụ Proptimizer và ứng dụng AI trên AWS.
+**Nguyễn Tuấn Thịnh** trình bày chủ đề **“Automated Prompt Engineering: Enhancing LLM Output Quality”**. Nội dung tập trung vào cách viết prompt rõ ràng, tối ưu token, công cụ Proptimizer và ứng dụng AI trên AWS.
 
-- **Khang** chia sẻ về tư duy phát triển bản thân trong thời đại AI, bao gồm growth mindset, thái độ nghề nghiệp, sự chính trực và cách doanh nghiệp đánh giá nhân sự.
+**Khang** chia sẻ về tư duy phát triển bản thân trong thời đại AI. Phần này nhấn mạnh growth mindset, thái độ học tập, sự chính trực và cách doanh nghiệp đánh giá nhân sự.
 
-- **Thảo** trình bày chủ đề **“Đừng chỉ Vibe Code – Hãy xây dựng chuẩn Software Engineering”**, nhấn mạnh việc sử dụng AI Agent và BMAD Method trong quy trình phát triển phần mềm chuyên nghiệp.
+**Thảo** trình bày chủ đề **“Đừng chỉ Vibe Code – Hãy xây dựng chuẩn Software Engineering”**. Nội dung nói về việc dùng AI Agent và BMAD Method để hỗ trợ quy trình phát triển phần mềm chuyên nghiệp hơn.
 
 ## 3. Những điểm đáng chú ý
 
-### 3.1. Tạo động lực học tập từ cơ chế mạng xã hội
+Một nội dung tôi thấy thú vị là cách áp dụng cơ chế của mạng xã hội vào việc học. Mạng xã hội thường tạo cảm giác thích thú vì có phản hồi nhanh và phần thưởng ngắn hạn. Từ đó, tôi hiểu rằng việc học cũng nên được chia thành các mục tiêu nhỏ để dễ duy trì động lực hơn.
 
-Một nội dung thú vị của sự kiện là phần phân tích vì sao mạng xã hội dễ thu hút người dùng hơn việc học. Các yếu tố như dopamine, phản hồi nhanh, phần thưởng ngắn hạn và tâm lý sợ mất mát khiến người dùng có xu hướng quay lại nền tảng liên tục.
+Phần Prompt Engineering cũng rất hữu ích. Tôi nhận ra rằng nếu đặt câu hỏi quá chung chung thì AI thường trả lời không đúng ý hoặc thiếu chiều sâu. Một prompt tốt cần có vai trò, nhiệm vụ, bối cảnh, dữ liệu đầu vào, định dạng kết quả và các yêu cầu cụ thể.
 
-Từ phần chia sẻ này, tôi hiểu rằng việc học cũng có thể được thiết kế hấp dẫn hơn. Nếu biết chia nhỏ mục tiêu, tạo phản hồi nhanh và giúp người học cảm nhận được sự tiến bộ, quá trình học tập sẽ dễ duy trì hơn.
+Ngoài ra, sự kiện còn giới thiệu một số dịch vụ AWS có thể dùng để xây dựng ứng dụng AI như **API Gateway**, **AWS Lambda**, **Amazon Cognito**, **Amazon Bedrock**, **Amazon DynamoDB** và **CloudWatch**. Nhờ đó, tôi có cái nhìn tổng quan hơn về cách một hệ thống AI được triển khai trong thực tế.
 
-### 3.2. Xây dựng prompt hiệu quả với AI
+Phần chia sẻ về AI Agent cũng giúp tôi hiểu rằng không nên chỉ dùng AI để viết code nhanh. Khi phát triển phần mềm, vẫn cần có quy trình rõ ràng như phân tích yêu cầu, thiết kế, chia task, viết code, kiểm thử và review.
 
-Sự kiện nhấn mạnh rằng prompt chung chung thường tạo ra kết quả chung chung, thiếu chiều sâu và khó áp dụng vào thực tế. Vì vậy, khi làm việc với AI, người dùng cần đặt yêu cầu rõ ràng và có cấu trúc.
+## 4. Những điều học được
 
-Một prompt hiệu quả nên có các phần như vai trò, nhiệm vụ, bối cảnh, dữ liệu đầu vào, ví dụ minh họa, định dạng đầu ra và các ràng buộc cụ thể. Điều này giúp AI hiểu đúng yêu cầu và tạo ra kết quả phù hợp hơn.
+Sau sự kiện, tôi học được rằng AI là công cụ hỗ trợ rất mạnh, nhưng người dùng không nên phụ thuộc hoàn toàn vào AI. Khi sử dụng AI, cần biết đặt câu hỏi rõ ràng, cung cấp bối cảnh đầy đủ và kiểm tra lại kết quả trước khi dùng.
 
-Ngoài ra, nội dung về **Token Economics** cũng cho thấy việc tối ưu prompt không chỉ giúp nâng cao chất lượng đầu ra mà còn giúp tiết kiệm chi phí khi sử dụng AI.
+Tôi cũng hiểu rằng Prompt Engineering là một kỹ năng quan trọng. Viết prompt tốt giúp AI đưa ra câu trả lời chính xác hơn, dễ áp dụng hơn và tiết kiệm thời gian hơn.
 
-### 3.3. Ứng dụng AI và AWS vào sản phẩm thực tế
+Bên cạnh đó, tôi nhận ra rằng tư duy phát triển và sự chính trực cũng rất quan trọng trong công việc. AI có thể giúp làm việc nhanh hơn, nhưng con người vẫn cần chịu trách nhiệm với kết quả cuối cùng.
 
-Sự kiện giới thiệu cách triển khai một ứng dụng AI trên nền tảng AWS. Một số dịch vụ được nhắc đến gồm **API Gateway**, **AWS Lambda**, **Amazon Cognito**, **Amazon Bedrock**, **Amazon DynamoDB** và **CloudWatch**.
+## 5. Ứng dụng sau sự kiện
 
-Qua phần này, tôi có cái nhìn tổng quan hơn về cách một hệ thống AI được xây dựng trong thực tế, từ backend, xác thực người dùng, lưu trữ dữ liệu, tích hợp mô hình AI cho đến giám sát hoạt động của hệ thống.
+Sau sự kiện, tôi có thể áp dụng kiến thức đã học vào việc sử dụng AI trong học tập và làm dự án. Khi đặt câu hỏi cho AI, tôi sẽ cố gắng viết prompt rõ ràng hơn, nêu đầy đủ mục tiêu, bối cảnh và định dạng mong muốn.
 
-### 3.4. Tư duy cá nhân trong thời đại AI
+Trong học tập, tôi sẽ chia nhỏ mục tiêu, theo dõi tiến độ và tạo thói quen học đều đặn hơn. Khi làm dự án phần mềm, tôi sẽ chú ý hơn đến quy trình làm việc như phân tích yêu cầu, thiết kế, kiểm thử và review code.
 
-Một thông điệp quan trọng trong sự kiện là AI có thể giúp con người làm việc nhanh hơn, nhưng hiệu quả vẫn phụ thuộc vào tư duy và cách sử dụng công cụ của mỗi người.
-
-Người học và người làm trong lĩnh vực công nghệ cần rèn luyện thái độ học tập, tư duy phản biện, khả năng tự định hướng và sự chính trực trong công việc. Các nội dung như growth mindset, câu hỏi “Why?” và mô hình 3 vòng tròn giúp tôi hiểu rõ hơn về yêu cầu phát triển bản thân trong môi trường công nghệ.
-
-### 3.5. Sử dụng AI Agent trong phát triển phần mềm
-
-Phần chia sẻ về AI Agent giúp tôi hiểu rằng không nên chỉ dùng AI để “vibe code”, tức là viết code một cách cảm tính và thiếu kiểm soát. Thay vào đó, cần áp dụng AI vào một quy trình Software Engineering rõ ràng.
-
-Một số AI Agent được giới thiệu gồm **PM Agent**, **Architect Agent**, **Scrum Master**, **Developer Agent** và **Review Agent**. Các agent này có thể hỗ trợ nhiều bước như tạo PRD, thiết kế kiến trúc, chia Epic/Story, viết code, kiểm thử, refactor và review codebase.
-
-## 4. Kiến thức tiếp thu được
-
-Sau khi tham gia sự kiện, tôi nhận ra rằng AI là một công cụ hỗ trợ mạnh mẽ, nhưng người dùng không nên sử dụng AI một cách thụ động. Khi làm việc với AI, cần biết đặt câu hỏi rõ ràng, cung cấp đầy đủ bối cảnh và kiểm tra lại kết quả trước khi áp dụng.
-
-Tôi cũng hiểu rằng Prompt Engineering là một kỹ năng quan trọng trong học tập và công việc. Một prompt tốt sẽ giúp AI tạo ra câu trả lời chính xác, rõ ràng và phù hợp hơn với nhu cầu thực tế.
-
-Về mặt nghề nghiệp, tôi học được rằng cần chủ động đặt câu hỏi “Why?” để hiểu bản chất vấn đề thay vì chỉ làm theo hướng dẫn. Bên cạnh kỹ năng chuyên môn, sự chính trực, tinh thần học hỏi và trách nhiệm cá nhân cũng là những yếu tố rất quan trọng.
-
-## 5. Cách áp dụng sau sự kiện
-
-Từ những kiến thức đã học, tôi có thể áp dụng vào việc sử dụng AI hiệu quả hơn trong học tập và làm dự án. Khi đặt câu hỏi cho AI, tôi sẽ cố gắng cung cấp rõ vai trò, nhiệm vụ, bối cảnh, dữ liệu đầu vào, ví dụ và yêu cầu đầu ra.
-
-Trong học tập, tôi sẽ chia nhỏ mục tiêu, theo dõi tiến độ và tạo phản hồi nhanh để duy trì động lực. Trong phát triển phần mềm, tôi có thể thử dùng AI Agent để hỗ trợ tạo tài liệu yêu cầu, chia task, viết code, kiểm thử và review.
-
-Ngoài ra, tôi cũng muốn tìm hiểu thêm về các dịch vụ AWS như Lambda, Bedrock, DynamoDB, Cognito và CloudWatch để hiểu rõ hơn cách xây dựng một hệ thống AI thực tế.
+Ngoài ra, tôi cũng muốn tìm hiểu thêm về các dịch vụ AWS như Lambda, Bedrock, DynamoDB, Cognito và CloudWatch để hiểu rõ hơn cách triển khai một hệ thống AI thực tế.
 
 ## 6. Cảm nhận cá nhân
 
-Tham gia **First Cloud AI Journey** là một trải nghiệm hữu ích đối với tôi. Sự kiện giúp tôi tiếp cận AI từ nhiều góc nhìn khác nhau như học tập, Prompt Engineering, định hướng nghề nghiệp và phát triển phần mềm.
+Sự kiện **First Cloud AI Journey - Event 1** mang lại cho tôi nhiều kiến thức hữu ích và dễ áp dụng. Tôi thích cách các diễn giả không chỉ nói về công nghệ, mà còn chia sẻ về cách học, cách làm việc và cách phát triển bản thân trong thời đại AI.
 
-Tôi ấn tượng với phần chia sẻ về cơ chế mạng xã hội vì nó giúp tôi hiểu vì sao việc học thường khó duy trì hơn các hoạt động giải trí ngắn hạn. Từ đó, tôi nhận ra rằng việc học cần được tổ chức hợp lý để tạo động lực lâu dài.
+Điều tôi ấn tượng nhất là AI không thay thế hoàn toàn con người. AI chỉ là công cụ hỗ trợ, còn con người vẫn cần tư duy phản biện, kiểm tra kết quả và chịu trách nhiệm với sản phẩm mình tạo ra.
 
-Nội dung về Prompt Engineering cũng giúp tôi hiểu rằng chất lượng câu trả lời của AI phụ thuộc rất nhiều vào cách đặt yêu cầu. Thay vì đặt câu hỏi ngắn và chung chung, tôi cần cung cấp rõ mục tiêu, bối cảnh, định dạng và giới hạn.
+## 7. Tổng kết
 
-Phần trình bày về AI Agent cũng giúp tôi hình dung rõ hơn cách AI có thể tham gia vào nhiều bước trong quy trình phát triển phần mềm, không chỉ dừng lại ở việc sinh code tự động.
-
-## 7. Bài học rút ra
-
-Qua sự kiện, tôi rút ra rằng AI là công cụ hỗ trợ mạnh mẽ nhưng không thể thay thế hoàn toàn tư duy và trách nhiệm của con người. Để sử dụng AI hiệu quả, người dùng cần biết cách đặt câu hỏi, kiểm tra kết quả và áp dụng vào đúng mục đích.
-
-Prompt Engineering là một kỹ năng cần thiết trong học tập và công việc. Ngoài ra, việc học tập cũng có thể được cải thiện bằng cách chia nhỏ mục tiêu, tạo phản hồi nhanh và duy trì cảm giác tiến bộ.
-
-Trong môi trường công nghệ, thái độ, tư duy phát triển và sự chính trực quan trọng không kém kỹ năng chuyên môn. Khi phát triển phần mềm với AI, cần có quy trình rõ ràng, kiểm thử và review cẩn thận thay vì chỉ phụ thuộc vào việc AI sinh code.
-
-## 8. Tổng kết
-
-Tổng thể, sự kiện **First Cloud AI Journey** đã mang lại cho tôi nhiều kiến thức hữu ích về AI, Cloud, Prompt Engineering và phát triển phần mềm.
-
-Sự kiện không chỉ cung cấp kiến thức công nghệ mà còn giúp tôi thay đổi cách nhìn về việc sử dụng AI. Tôi hiểu rằng AI là công cụ hỗ trợ hiệu quả trong học tập và công việc, nhưng con người vẫn giữ vai trò điều phối, kiểm tra và chịu trách nhiệm với kết quả cuối cùng.
+Tổng thể, sự kiện giúp tôi hiểu thêm về AI, Cloud, Prompt Engineering và phát triển phần mềm. Sau sự kiện, tôi nhận ra rằng để sử dụng AI hiệu quả, cần biết cách đặt câu hỏi, biết kiểm tra kết quả và biết áp dụng AI vào đúng mục đích.
