@@ -1,50 +1,52 @@
 ---
 title: "Worklog Tuần 11"
-date: 2026-06-27
+date: 2026-06-26
 weight: 11
 chapter: false
 pre: " <b> 1.11. </b> "
 ---
 {{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
+⚠️ **Lưu ý:** Nội dung dưới đây chỉ dùng để tham khảo cách trình bày. Không nên sao chép nguyên văn vào báo cáo chính thức.
 {{% /notice %}}
 
 ### Mục tiêu tuần 11:
 
-* Hoàn thiện các thành phần chính của hệ thống thanh toán, đặc biệt là Payment Service, idempotency và xử lý trạng thái giao dịch.
-* Kiểm soát tình huống nhiều request gửi đồng thời bằng Redis lock, cập nhật trạng thái có điều kiện và kiểm tra dữ liệu trùng lặp.
-* Kết nối Payment Service với Account Service, đồng thời bổ sung cơ chế timeout, retry và circuit breaker để giảm lỗi khi các service giao tiếp với nhau.
-* Rà soát API Gateway, rate limiting theo người dùng và chuẩn bị kiến trúc triển khai AWS cho giai đoạn kiểm thử tải.
+* Rà soát và kết nối các microservice của hệ thống thanh toán trong môi trường local trước khi triển khai Cloud.
+* Chuẩn bị kiến trúc AWS cho đề tài **Triển khai Hệ thống Thanh toán hiệu năng cao trên AWS ECS Fargate với Private Subnets, RDS PostgreSQL và S3 Backup**.
+* Đóng gói các service thành Docker image, đưa image lên Amazon ECR và chuẩn bị cấu hình chạy trên ECS Fargate.
+* Thiết lập các thành phần nền tảng như VPC, private subnet, Internal ALB, RDS PostgreSQL, ElastiCache Redis, IAM Role, Security Group và CloudWatch.
 
 ### Các công việc cần triển khai trong tuần này:
 | Ngày | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
 | --- | --- | --- | --- | --- |
-| 27/06/2026 | - Hoàn thiện mô hình dữ liệu và API của Payment Service<br>&emsp; + Xây dựng entity thanh toán, API tạo thanh toán và API tra cứu trạng thái<br>&emsp; + Kiểm tra các trường quan trọng như userId, accountId, amount, currency và idempotencyKey<br>&emsp; + Bổ sung ràng buộc dữ liệu để hạn chế tạo trùng giao dịch | 27/06/2026 | 27/06/2026 | Mã nguồn Payment Service |
-| 28/06/2026 | - Triển khai cơ chế idempotency cho Payment Service<br>&emsp; + Kiểm tra request gửi lại cùng idempotencyKey<br>&emsp; + So sánh payload của request cũ và request mới trước khi trả kết quả<br>&emsp; + Từ chối trường hợp dùng lại key nhưng dữ liệu giao dịch không giống nhau | 28/06/2026 | 28/06/2026 | Spring Boot, PostgreSQL |
-| 29/06/2026 | - Xây dựng state machine cho quy trình thanh toán<br>&emsp; + Áp dụng luồng trạng thái PENDING, PROCESSING, SUCCESS và FAILED<br>&emsp; + Dùng cập nhật có điều kiện để chỉ một request được quyền xử lý payment<br>&emsp; + Ngăn việc nhiều tiến trình cùng gọi debit cho một giao dịch | 29/06/2026 | 29/06/2026 | Spring Data JPA, PostgreSQL |
-| 30/06/2026 | - Bổ sung Redis distributed lock cho xử lý đồng thời<br>&emsp; + Khóa theo idempotencyKey trong thời gian ngắn để giảm cạnh tranh khi nhiều request vào cùng lúc<br>&emsp; + Thiết lập TTL để tránh lock bị giữ vĩnh viễn khi service gặp lỗi<br>&emsp; + Giải phóng lock an toàn bằng cách kiểm tra giá trị lock trước khi xóa | 30/06/2026 | 30/06/2026 | Redis documentation |
-| 01/07/2026 | - Tích hợp Payment Service với Account Service<br>&emsp; + Gọi API debit thông qua OpenFeign và truyền mã giao dịch để Account Service xử lý idempotency<br>&emsp; + Cấu hình timeout để tránh treo request quá lâu khi service đích phản hồi chậm<br>&emsp; + Phân biệt lỗi nghiệp vụ và lỗi tạm thời trong quá trình ghi nợ tài khoản | 01/07/2026 | 01/07/2026 | OpenFeign, Resilience4j |
-| 02/07/2026 | - Hoàn thiện API Gateway và rate limiting<br>&emsp; + Định tuyến request đến Account Service, Payment Service và Transaction Service<br>&emsp; + Áp dụng token bucket bằng Redis Lua Script để giới hạn lưu lượng theo userId<br>&emsp; + Kiểm tra phản hồi khi vượt giới hạn và fallback khi thiếu thông tin người dùng | 02/07/2026 | 02/07/2026 | Mã nguồn API Gateway |
-| 03/07/2026 | - Kiểm tra tích hợp local và chuẩn bị kiến trúc AWS<br>&emsp; + Chạy PostgreSQL, Redis và các microservice bằng cấu hình thống nhất<br>&emsp; + Kiểm tra health endpoint, routing qua gateway và luồng Payment Service gọi Account Service<br>&emsp; + Rà soát sơ đồ triển khai AWS gồm API Gateway, VPC Link, Internal ALB, ECS Fargate, RDS và Redis | 03/07/2026 | 03/07/2026 | Docker Compose, tài liệu kiến trúc AWS |
+| 26/06/2026 | - Kiểm tra lại toàn bộ source code và cấu hình chạy local<br>&emsp; + Chạy API Gateway, Payment Service, Account Service và Transaction Service cùng PostgreSQL, Redis<br>&emsp; + Kiểm tra các endpoint health check và luồng gọi giữa Payment Service với Account Service<br>&emsp; + Điều chỉnh lại biến môi trường, port, connection string và schema còn sai lệch | 26/06/2026 | 26/06/2026 | Mã nguồn dự án, Docker Compose |
+| 27/06/2026 | - Chuẩn hóa cấu hình để chuẩn bị đưa lên AWS<br>&emsp; + Tách các thông tin cấu hình theo từng service<br>&emsp; + Xác định các biến cần đưa vào Task Definition như database URL, Redis endpoint, service port và cấu hình profile<br>&emsp; + Kiểm tra lại Dockerfile để bảo đảm service có thể build image ổn định | 27/06/2026 | 27/06/2026 | Dockerfile, cấu hình ứng dụng |
+| 28/06/2026 | - Hoàn thiện thiết kế kiến trúc AWS<br>&emsp; + Xác định luồng truy cập từ API Gateway đến VPC Link, Internal ALB và ECS Fargate<br>&emsp; + Bố trí các service trong private subnets để hạn chế truy cập trực tiếp từ Internet<br>&emsp; + Xác định vị trí của RDS PostgreSQL, ElastiCache Redis và S3 Backup trong kiến trúc | 28/06/2026 | 28/06/2026 | Tài liệu kiến trúc AWS |
+| 29/06/2026 | - Tạo và cấu hình các thành phần mạng cơ bản<br>&emsp; + Chuẩn bị VPC, subnet, route table và security group cho từng tầng<br>&emsp; + Thiết kế rule để API Gateway chỉ đi vào hệ thống qua VPC Link và Internal ALB<br>&emsp; + Giới hạn kết nối đến RDS và Redis chỉ từ các ECS Service cần thiết | 29/06/2026 | 29/06/2026 | Amazon VPC, Security Group |
+| 30/06/2026 | - Đóng gói ứng dụng và lưu trữ image<br>&emsp; + Tạo repository trên Amazon ECR cho từng service<br>&emsp; + Build Docker image cho Account, Payment và Transaction Service<br>&emsp; + Push image lên ECR để sử dụng trong ECS Task Definition | 30/06/2026 | 30/06/2026 | Amazon ECR, Docker |
+| 01/07/2026 | - Tạo ECS Cluster, Task Definition và ECS Service<br>&emsp; + Khai báo image, port, CPU, memory và biến môi trường cho từng task<br>&emsp; + Gán IAM Role phù hợp để task có quyền đọc secret và ghi log<br>&emsp; + Tạo ECS Service chạy trên Fargate và kiểm tra trạng thái task sau khi khởi động | 01/07/2026 | 01/07/2026 | Amazon ECS Fargate |
+| 02/07/2026 | - Kết nối tầng truy cập, dữ liệu và giám sát<br>&emsp; + Tạo Internal ALB, target group và listener rule cho các service<br>&emsp; + Chuẩn bị RDS PostgreSQL, ElastiCache Redis, Secrets Manager và CloudWatch Logs<br>&emsp; + Kiểm tra log khởi động, health check và khả năng service kết nối đến database/cache | 02/07/2026 | 02/07/2026 | ALB, RDS, ElastiCache, CloudWatch |
 
 ### Kết quả đạt được tuần 11:
 
-* Hoàn thiện được Payment Service theo hướng an toàn hơn cho hệ thống thanh toán chịu tải cao. Service đã có API tạo thanh toán, API tra cứu trạng thái, mô hình dữ liệu rõ ràng và các kiểm tra cơ bản cho amount, currency, userId, accountId và idempotencyKey.
+* Hoàn thành bước kiểm tra và chuẩn hóa hệ thống microservices trong môi trường local. Các service chính gồm API Gateway, Payment Service, Account Service và Transaction Service có thể khởi chạy cùng PostgreSQL, Redis và trao đổi với nhau theo đúng luồng xử lý.
 
-* Xây dựng được cơ chế idempotency nhiều lớp nhằm hạn chế tình trạng tạo trùng giao dịch. Ở tầng cơ sở dữ liệu, idempotencyKey được kiểm soát bằng ràng buộc duy nhất; ở tầng xử lý, request gửi lại được kiểm tra payload trước khi trả về trạng thái hiện tại của payment.
+* Rà soát được các lỗi cấu hình thường gặp trước khi triển khai lên AWS, bao gồm biến môi trường, port service, connection string, schema database và đường dẫn API giữa các service. Việc kiểm tra này giúp hạn chế lỗi khi chuyển từ môi trường local sang môi trường Cloud.
 
-* Hiểu và áp dụng được state machine cho quy trình thanh toán. Giao dịch không được cập nhật trạng thái tùy ý mà phải đi theo luồng hợp lệ từ PENDING sang PROCESSING, sau đó mới kết thúc ở SUCCESS hoặc FAILED.
+* Xây dựng được hướng kiến trúc AWS phù hợp với đề tài triển khai hệ thống thanh toán hiệu năng cao. Luồng truy cập được xác định theo mô hình API Gateway đi vào VPC qua VPC Link, sau đó Internal ALB phân phối request đến các ECS Service chạy trên Fargate.
 
-* Triển khai được cơ chế claim quyền xử lý bằng cập nhật có điều kiện trong PostgreSQL. Cách làm này giúp chỉ một request giành được quyền xử lý payment, từ đó tránh việc nhiều tiến trình cùng gọi Account Service và ghi nợ tài khoản nhiều lần.
+* Thiết kế được mô hình đặt service trong private subnets. Cách bố trí này giúp các service backend không bị truy cập trực tiếp từ Internet, đồng thời vẫn có thể nhận request thông qua tầng truy cập được kiểm soát.
 
-* Bổ sung Redis distributed lock để giảm xung đột khi có nhiều request đồng thời dùng chung idempotencyKey. Lock được thiết kế có TTL và kiểm tra giá trị trước khi xóa, giúp hạn chế lỗi xóa nhầm lock của request khác.
+* Xác định được vai trò của từng thành phần trong kiến trúc: ECS Fargate chạy ứng dụng container, RDS PostgreSQL lưu dữ liệu nghiệp vụ, ElastiCache Redis phục vụ cache/lock/rate limit, S3 dùng cho backup hoặc lưu dữ liệu xuất ra, CloudWatch dùng để theo dõi log và metric.
 
-* Tích hợp Payment Service với Account Service thông qua OpenFeign. Payment Service có thể gửi yêu cầu debit kèm transactionId, còn Account Service chịu trách nhiệm bảo đảm một giao dịch hợp lệ không bị ghi nợ lặp lại.
+* Đóng gói được các service thành Docker image và đưa lên Amazon ECR. Việc lưu trữ image tập trung giúp quá trình triển khai lên ECS rõ ràng hơn, dễ quản lý phiên bản và thuận tiện khi cập nhật service.
 
-* Cấu hình được timeout, retry và circuit breaker cho quá trình giao tiếp giữa các service. Những lỗi tạm thời không bị xử lý vội thành thất bại cuối cùng, giúp tránh trường hợp tài khoản đã bị trừ tiền nhưng payment lại bị đánh dấu FAILED không chính xác.
+* Tạo được ECS Cluster, Task Definition và ECS Service cho các service chính. Task Definition đã mô tả image, port, CPU, memory, biến môi trường và quyền cần thiết để service hoạt động trong môi trường Fargate.
 
-* Hoàn thiện API Gateway ở mức cơ bản, các route chính được gom qua một cổng truy cập chung. Rate limiting theo userId được xử lý bằng Redis Lua Script để bảo đảm thao tác kiểm tra và cập nhật token diễn ra nguyên tử.
+* Thiết lập được các thành phần bảo mật cơ bản như IAM Role và Security Group. Quyền truy cập được tách theo vai trò, còn kết nối mạng giữa ALB, ECS, RDS và Redis được giới hạn theo nhu cầu thực tế của từng tầng.
 
-* Kiểm tra được luồng chạy local của hệ thống gồm API Gateway, Payment Service, Account Service, Transaction Service, PostgreSQL và Redis. Các lỗi cấu hình môi trường, kết nối database hoặc schema được rà soát để chuẩn bị cho triển khai AWS.
+* Chuẩn bị được tầng dữ liệu với RDS PostgreSQL và ElastiCache Redis. Các service có thể sử dụng database để lưu thông tin tài khoản, thanh toán, giao dịch và sử dụng Redis cho các chức năng cần tốc độ cao.
 
-* Hoàn thiện định hướng kiến trúc AWS cho hệ thống thanh toán chịu tải cao, trong đó API Gateway kết nối vào mạng riêng qua VPC Link, Internal ALB phân phối request đến ECS Fargate, RDS PostgreSQL lưu dữ liệu và ElastiCache Redis phục vụ cache, lock, rate limit.
+* Bật được CloudWatch Logs để theo dõi quá trình khởi động và vận hành của ECS task. Log tập trung giúp dễ kiểm tra lỗi service, trạng thái kết nối database/cache và các vấn đề phát sinh trước giai đoạn kiểm thử tải.
+
+* Sau tuần này, hệ thống đã có nền tảng triển khai AWS tương đối hoàn chỉnh, sẵn sàng cho việc kiểm tra end-to-end, đánh giá idempotency, rate limiting và thực hiện kiểm thử tải trong tuần tiếp theo.
