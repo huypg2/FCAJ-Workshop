@@ -1,12 +1,13 @@
 ---
 title: "Worklog Tuần 11"
-date: 2026-06-26
-description: "Web Apps, môi trường Windows HA và workshop tổng hợp"
+date: 2026-06-27
+weight: 11
+chapter: false
+pre: " <b> 1.11. </b> "
 ---
-
-# Tuần 11: Web Apps, môi trường Windows HA và workshop tổng hợp
-
-**Thời gian:** 26/06/2026 - 02/07/2026
+{{% notice warning %}}
+⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
+{{% /notice %}}
 
 ### Mục tiêu tuần 11:
 
