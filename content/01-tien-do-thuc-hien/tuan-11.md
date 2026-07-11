@@ -8,64 +8,42 @@ description: "Web Apps, môi trường Windows HA và workshop tổng hợp"
 
 **Thời gian:** 26/06/2026 - 02/07/2026
 
-## 1. Mục tiêu trong tuần
+### Mục tiêu tuần 11:
 
-Tuần 11 tập trung vào các workshop tổng hợp, bao gồm xây dựng ứng dụng web Serverless, triển khai ứng dụng với Elastic Beanstalk, vận hành WordPress trên AWS và tìm hiểu các mô hình hệ thống có tính sẵn sàng cao.
+* Hoàn thiện các thành phần chính của hệ thống thanh toán, đặc biệt là Payment Service, idempotency và xử lý trạng thái giao dịch.
+* Kiểm soát tình huống nhiều request gửi đồng thời bằng Redis lock, cập nhật trạng thái có điều kiện và kiểm tra dữ liệu trùng lặp.
+* Kết nối Payment Service với Account Service, đồng thời bổ sung cơ chế timeout, retry và circuit breaker để giảm lỗi khi các service giao tiếp với nhau.
+* Rà soát API Gateway, rate limiting theo người dùng và chuẩn bị kiến trúc triển khai AWS cho giai đoạn kiểm thử tải.
 
-Các nội dung chính trong tuần gồm: Serverless Web App, Serverless API, Serverless Chat App, Elastic Beanstalk, Node.js, CDK Pipelines, WordPress trên AWS, High Availability Web App, Windows Server HA và SQL Server HA.
+### Các công việc cần triển khai trong tuần này:
+| Ngày | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+| --- | --- | --- | --- | --- |
+| 27/06/2026 | - Hoàn thiện mô hình dữ liệu và API của Payment Service<br>&emsp; + Xây dựng entity thanh toán, API tạo thanh toán và API tra cứu trạng thái<br>&emsp; + Kiểm tra các trường quan trọng như userId, accountId, amount, currency và idempotencyKey<br>&emsp; + Bổ sung ràng buộc dữ liệu để hạn chế tạo trùng giao dịch | 27/06/2026 | 27/06/2026 | Mã nguồn Payment Service |
+| 28/06/2026 | - Triển khai cơ chế idempotency cho Payment Service<br>&emsp; + Kiểm tra request gửi lại cùng idempotencyKey<br>&emsp; + So sánh payload của request cũ và request mới trước khi trả kết quả<br>&emsp; + Từ chối trường hợp dùng lại key nhưng dữ liệu giao dịch không giống nhau | 28/06/2026 | 28/06/2026 | Spring Boot, PostgreSQL |
+| 29/06/2026 | - Xây dựng state machine cho quy trình thanh toán<br>&emsp; + Áp dụng luồng trạng thái PENDING, PROCESSING, SUCCESS và FAILED<br>&emsp; + Dùng cập nhật có điều kiện để chỉ một request được quyền xử lý payment<br>&emsp; + Ngăn việc nhiều tiến trình cùng gọi debit cho một giao dịch | 29/06/2026 | 29/06/2026 | Spring Data JPA, PostgreSQL |
+| 30/06/2026 | - Bổ sung Redis distributed lock cho xử lý đồng thời<br>&emsp; + Khóa theo idempotencyKey trong thời gian ngắn để giảm cạnh tranh khi nhiều request vào cùng lúc<br>&emsp; + Thiết lập TTL để tránh lock bị giữ vĩnh viễn khi service gặp lỗi<br>&emsp; + Giải phóng lock an toàn bằng cách kiểm tra giá trị lock trước khi xóa | 30/06/2026 | 30/06/2026 | Redis documentation |
+| 01/07/2026 | - Tích hợp Payment Service với Account Service<br>&emsp; + Gọi API debit thông qua OpenFeign và truyền mã giao dịch để Account Service xử lý idempotency<br>&emsp; + Cấu hình timeout để tránh treo request quá lâu khi service đích phản hồi chậm<br>&emsp; + Phân biệt lỗi nghiệp vụ và lỗi tạm thời trong quá trình ghi nợ tài khoản | 01/07/2026 | 01/07/2026 | OpenFeign, Resilience4j |
+| 02/07/2026 | - Hoàn thiện API Gateway và rate limiting<br>&emsp; + Định tuyến request đến Account Service, Payment Service và Transaction Service<br>&emsp; + Áp dụng token bucket bằng Redis Lua Script để giới hạn lưu lượng theo userId<br>&emsp; + Kiểm tra phản hồi khi vượt giới hạn và fallback khi thiếu thông tin người dùng | 02/07/2026 | 02/07/2026 | Mã nguồn API Gateway |
+| 03/07/2026 | - Kiểm tra tích hợp local và chuẩn bị kiến trúc AWS<br>&emsp; + Chạy PostgreSQL, Redis và các microservice bằng cấu hình thống nhất<br>&emsp; + Kiểm tra health endpoint, routing qua gateway và luồng Payment Service gọi Account Service<br>&emsp; + Rà soát sơ đồ triển khai AWS gồm API Gateway, VPC Link, Internal ALB, ECS Fargate, RDS và Redis | 03/07/2026 | 03/07/2026 | Docker Compose, tài liệu kiến trúc AWS |
 
-## 2. Nội dung thực hiện
+### Kết quả đạt được tuần 11:
 
-### Workshop ứng dụng Web Serverless
+* Hoàn thiện được Payment Service theo hướng an toàn hơn cho hệ thống thanh toán chịu tải cao. Service đã có API tạo thanh toán, API tra cứu trạng thái, mô hình dữ liệu rõ ràng và các kiểm tra cơ bản cho amount, currency, userId, accountId và idempotencyKey.
 
-Tìm hiểu cách xây dựng ứng dụng web theo kiến trúc Serverless. Nội dung này giúp nắm được cách kết hợp frontend, backend API, xác thực và lưu trữ dữ liệu bằng các dịch vụ AWS mà không cần quản lý máy chủ trực tiếp.
+* Xây dựng được cơ chế idempotency nhiều lớp nhằm hạn chế tình trạng tạo trùng giao dịch. Ở tầng cơ sở dữ liệu, idempotencyKey được kiểm soát bằng ràng buộc duy nhất; ở tầng xử lý, request gửi lại được kiểm tra payload trước khi trả về trạng thái hiện tại của payment.
 
-### Xây dựng API Serverless
+* Hiểu và áp dụng được state machine cho quy trình thanh toán. Giao dịch không được cập nhật trạng thái tùy ý mà phải đi theo luồng hợp lệ từ PENDING sang PROCESSING, sau đó mới kết thúc ở SUCCESS hoặc FAILED.
 
-Tìm hiểu cách xây dựng API bằng các dịch vụ Serverless như API Gateway và AWS Lambda. Nội dung này giúp hiểu cách tiếp nhận request, xử lý logic và trả dữ liệu về cho ứng dụng frontend.
+* Triển khai được cơ chế claim quyền xử lý bằng cập nhật có điều kiện trong PostgreSQL. Cách làm này giúp chỉ một request giành được quyền xử lý payment, từ đó tránh việc nhiều tiến trình cùng gọi Account Service và ghi nợ tài khoản nhiều lần.
 
-### Ứng dụng chat Serverless
+* Bổ sung Redis distributed lock để giảm xung đột khi có nhiều request đồng thời dùng chung idempotencyKey. Lock được thiết kế có TTL và kiểm tra giá trị trước khi xóa, giúp hạn chế lỗi xóa nhầm lock của request khác.
 
-Tìm hiểu mô hình xây dựng ứng dụng chat theo kiến trúc Serverless. Nội dung này giúp nắm được cách xử lý kết nối người dùng, gửi nhận tin nhắn và lưu trữ dữ liệu trong hệ thống thời gian thực.
+* Tích hợp Payment Service với Account Service thông qua OpenFeign. Payment Service có thể gửi yêu cầu debit kèm transactionId, còn Account Service chịu trách nhiệm bảo đảm một giao dịch hợp lệ không bị ghi nợ lặp lại.
 
-### Workshop Elastic Beanstalk
+* Cấu hình được timeout, retry và circuit breaker cho quá trình giao tiếp giữa các service. Những lỗi tạm thời không bị xử lý vội thành thất bại cuối cùng, giúp tránh trường hợp tài khoản đã bị trừ tiền nhưng payment lại bị đánh dấu FAILED không chính xác.
 
-Tìm hiểu AWS Elastic Beanstalk và cách dịch vụ này hỗ trợ triển khai ứng dụng web nhanh hơn. Elastic Beanstalk giúp tự động xử lý nhiều phần như máy chủ, load balancing, scaling và monitoring.
+* Hoàn thiện API Gateway ở mức cơ bản, các route chính được gom qua một cổng truy cập chung. Rate limiting theo userId được xử lý bằng Redis Lua Script để bảo đảm thao tác kiểm tra và cập nhật token diễn ra nguyên tử.
 
-### Triển khai ứng dụng Node.js
+* Kiểm tra được luồng chạy local của hệ thống gồm API Gateway, Payment Service, Account Service, Transaction Service, PostgreSQL và Redis. Các lỗi cấu hình môi trường, kết nối database hoặc schema được rà soát để chuẩn bị cho triển khai AWS.
 
-Tìm hiểu cách triển khai ứng dụng Node.js lên AWS. Nội dung này giúp nắm được quy trình chuẩn bị source code, cấu hình môi trường chạy và kiểm tra ứng dụng sau khi deploy.
-
-### CI/CD với Elastic Beanstalk và CDK Pipelines
-
-Tìm hiểu cách tự động hóa triển khai ứng dụng bằng CI/CD. Nội dung này giúp hiểu cách kết hợp Elastic Beanstalk và CDK Pipelines để giảm thao tác thủ công khi cập nhật ứng dụng.
-
-### WordPress trên AWS
-
-Tìm hiểu kiến trúc triển khai WordPress trên AWS. Nội dung này giúp nắm được các thành phần cần thiết như EC2, database, storage và các cấu hình cơ bản để chạy một website WordPress.
-
-### Chạy WordPress trên Amazon EC2
-
-Tìm hiểu cách triển khai WordPress trực tiếp trên Amazon EC2. Nội dung này giúp hiểu rõ hơn cách cài đặt web server, cấu hình database và vận hành website trên máy chủ ảo.
-
-### Xây dựng ứng dụng web có tính sẵn sàng cao
-
-Tìm hiểu cách thiết kế ứng dụng web có khả năng hoạt động ổn định khi lưu lượng tăng hoặc khi một thành phần gặp sự cố. Nội dung gồm load balancing, auto scaling, multi-AZ và giám sát hệ thống.
-
-### Cụm chịu lỗi Windows Server trên AWS
-
-Tìm hiểu mô hình Windows Server có khả năng chịu lỗi trên AWS. Nội dung này giúp nắm được cách thiết kế hệ thống Windows có tính sẵn sàng cao, hạn chế gián đoạn khi xảy ra lỗi.
-
-### SQL Server tính sẵn sàng cao trên AWS
-
-Tìm hiểu cách triển khai SQL Server High Availability trên AWS cho các phiên bản 2019 và 2022. Nội dung này giúp hiểu cách bảo vệ cơ sở dữ liệu, giảm thời gian gián đoạn và tăng khả năng phục hồi khi gặp sự cố.
-
-## 3. Kết quả đạt được
-
-Sau tuần 11, đã nắm được nhiều nội dung tổng hợp liên quan đến xây dựng web app, triển khai ứng dụng, vận hành WordPress và thiết kế hệ thống có tính sẵn sàng cao trên AWS.
-
-Ngoài ra, các nội dung về Elastic Beanstalk, CDK Pipelines, Windows Server HA và SQL Server HA giúp hiểu rõ hơn cách triển khai và vận hành ứng dụng trong môi trường thực tế.
-
-## 4. Nhận xét
-
-Tuần 11 giúp tổng hợp lại nhiều nhóm kiến thức đã học trước đó, từ Serverless, CI/CD, web application đến high availability. Các nội dung này có tính ứng dụng cao vì thường xuất hiện trong các hệ thống doanh nghiệp cần triển khai ổn định và dễ mở rộng.
+* Hoàn thiện định hướng kiến trúc AWS cho hệ thống thanh toán chịu tải cao, trong đó API Gateway kết nối vào mạng riêng qua VPC Link, Internal ALB phân phối request đến ECS Fargate, RDS PostgreSQL lưu dữ liệu và ElastiCache Redis phục vụ cache, lock, rate limit.
