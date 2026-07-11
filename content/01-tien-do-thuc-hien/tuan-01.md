@@ -6,38 +6,35 @@ chapter: false
 pre: " <b> 1.1. </b> "
 ---
 {{% notice warning %}}
-⚠️ **Lưu ý:** Nội dung dưới đây dùng để tham khảo và hỗ trợ trình bày báo cáo. Khi đưa vào báo cáo chính thức, cần tự điều chỉnh lại theo quá trình thực hiện thực tế.
+⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
 {{% /notice %}}
-
 
 ### Mục tiêu tuần 1:
 
-* Nắm được các khái niệm nền tảng của điện toán đám mây và các nhóm dịch vụ chính trên AWS.
-* Thiết lập được môi trường ban đầu gồm tài khoản AWS, kiểm soát chi phí, phân quyền truy cập, mạng cơ bản, EC2, Cloud9 và AWS CLI.
+* Làm quen với các khái niệm cốt lõi của điện toán đám mây và hệ sinh thái dịch vụ AWS.
+* Chuẩn bị môi trường thực hành ban đầu, bao gồm tài khoản AWS, AWS Console, AWS Budgets, Cloud9 và AWS CLI.
+* Nắm nền tảng về phân quyền, mạng và máy chủ ảo để làm cơ sở cho các nội dung nâng cao hơn.
 
 ### Các công việc cần triển khai trong tuần này:
-| Ngày | Công việc | Kết quả thực hiện | Nguồn tài liệu |
-| --- | --- | --- | --- |
-| 17/04/2026 | - Khảo sát tổng quan nền tảng AWS và các nhóm dịch vụ như Compute, Storage, Networking, Database, Security và Monitoring. | - Phân loại được các nhóm dịch vụ cơ bản, hiểu vai trò của AWS trong việc cung cấp tài nguyên Cloud theo nhu cầu. | <https://cloudjourney.awsstudygroup.com/> |
-| 18/04/2026 | - Tạo và kiểm tra tài khoản AWS, làm quen với AWS Management Console, đồng thời thiết lập AWS Budgets để theo dõi chi phí. | - Hoàn tất tài khoản thực hành, biết vị trí các mục quản lý chính trên Console và tạo được cơ chế cảnh báo chi phí ban đầu. | <https://cloudjourney.awsstudygroup.com/> |
-| 19/04/2026 | - Tìm hiểu AWS Support và các thành phần IAM gồm User, Group, Policy và Role. | - Nắm được cách AWS hỗ trợ người dùng khi gặp sự cố và hiểu nguyên tắc cấp quyền tối thiểu trong quản lý truy cập. | <https://cloudjourney.awsstudygroup.com/> |
-| 20/04/2026 | - Tìm hiểu Amazon VPC, subnet, route table, internet gateway, security group và network ACL. | - Vẽ được luồng mạng cơ bản trong VPC, phân biệt được vai trò của subnet, route table và các lớp kiểm soát truy cập. | <https://cloudjourney.awsstudygroup.com/> |
-| 21/04/2026 | - Tìm hiểu Amazon EC2 gồm AMI, instance type, key pair, EBS, security group và cách khởi tạo máy chủ ảo. | - Nắm được quy trình tạo EC2 instance, chọn cấu hình phù hợp và hiểu cách kết nối máy chủ bằng SSH hoặc công cụ quản trị. | <https://cloudjourney.awsstudygroup.com/> |
-| 22/04/2026 | - Tìm hiểu IAM Roles for EC2 và AWS Cloud9 để cấp quyền an toàn cho ứng dụng và phát triển trên môi trường Cloud. | - Hiểu được cách gắn role cho EC2 thay vì lưu access key trực tiếp, đồng thời tạo được môi trường phát triển Cloud9 cơ bản. | <https://cloudjourney.awsstudygroup.com/> |
-| 23/04/2026 | - Cài đặt và cấu hình AWS CLI, kiểm tra tài khoản, region, EC2, key pair và một số thông tin dịch vụ bằng dòng lệnh. | - Thực hiện được các lệnh CLI cơ bản, xác nhận cấu hình hoạt động đúng và biết cách quản lý tài nguyên song song giữa Console và CLI. | <https://cloudjourney.awsstudygroup.com/> |
-
+| Ngày | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+| --- | --- | --- | --- | --- |
+| 17/04/2026 | - Khảo sát tổng quan AWS và các nhóm dịch vụ chính như Compute, Storage, Networking, Database, Security và Monitoring. <br> - Kết quả: Nhận diện được vai trò của từng nhóm dịch vụ trong một hệ thống Cloud cơ bản. | 17/04/2026 | 17/04/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| 18/04/2026 | - Tìm hiểu quy trình tạo tài khoản AWS và các bước kiểm tra ban đầu sau khi đăng nhập AWS Management Console. <br> - Kết quả: Chuẩn bị được tài khoản thực hành và biết cách truy cập giao diện quản lý dịch vụ. | 18/04/2026 | 18/04/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| 19/04/2026 | - Tìm hiểu AWS Budgets và cách thiết lập cảnh báo chi phí. <br> - Kết quả: Biết cách đặt ngưỡng ngân sách để theo dõi mức sử dụng tài nguyên và giảm rủi ro phát sinh chi phí ngoài dự kiến. | 19/04/2026 | 19/04/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| 20/04/2026 | - Tìm hiểu AWS Support và các kênh hỗ trợ kỹ thuật của AWS. <br> - Kết quả: Phân biệt được các gói hỗ trợ cơ bản và biết cách tra cứu tài liệu khi gặp sự cố. | 20/04/2026 | 20/04/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| 21/04/2026 | - Tìm hiểu IAM với các thành phần User, Group, Policy và Role. <br> - Kết quả: Nắm được cách phân quyền truy cập và nguyên tắc cấp quyền tối thiểu trong tài khoản AWS. | 21/04/2026 | 21/04/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| 22/04/2026 | - Tìm hiểu Amazon VPC và Amazon EC2, bao gồm subnet, route table, internet gateway, security group, AMI, instance type, key pair và EBS. <br> - Kết quả: Hình dung được cách thiết lập mạng riêng và tạo máy chủ ảo trên AWS. | 22/04/2026 | 22/04/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| 23/04/2026 | - Tìm hiểu IAM Roles for EC2, AWS Cloud9 và AWS CLI. <br> - Kết quả: Biết cách cấp quyền an toàn cho EC2, sử dụng môi trường phát triển trên Cloud và thao tác AWS bằng dòng lệnh. | 23/04/2026 | 23/04/2026 | <https://cloudjourney.awsstudygroup.com/> |
 
 ### Kết quả đạt được tuần 1:
 
-* Hình thành được bức tranh tổng quan về AWS, bao gồm vai trò của điện toán đám mây và các nhóm dịch vụ quan trọng như compute, storage, networking, database, security và monitoring.
-* Hoàn tất bước chuẩn bị môi trường thực hành ban đầu, gồm tạo tài khoản AWS, đăng nhập AWS Management Console, kiểm tra các khu vực dịch vụ và làm quen với giao diện quản trị tài nguyên.
-* Thiết lập được tư duy kiểm soát chi phí ngay từ đầu thông qua AWS Budgets, hiểu cách tạo ngân sách, đặt ngưỡng cảnh báo và theo dõi chi phí phát sinh trong quá trình thực hành.
-* Nắm được vai trò của AWS Support trong quá trình vận hành, biết khi nào cần tra cứu tài liệu, khi nào cần dùng kênh hỗ trợ và vì sao hỗ trợ kỹ thuật quan trọng đối với hệ thống thực tế.
-* Hiểu nền tảng phân quyền với IAM, bao gồm user, group, policy và role; bước đầu nhận biết nguyên tắc cấp quyền tối thiểu khi truy cập tài nguyên AWS.
-* Nắm được cấu trúc mạng cơ bản trong Amazon VPC, phân biệt được subnet, route table, internet gateway, security group và cách các thành phần này phối hợp để tạo mạng riêng trên AWS.
-* Hiểu cách Amazon EC2 hoạt động ở mức cơ bản, bao gồm lựa chọn AMI, instance type, key pair, EBS volume và cấu hình security group khi tạo máy chủ ảo.
-* Biết cách cấp quyền an toàn cho EC2 bằng IAM Role, tránh lưu Access Key và Secret Key trực tiếp trong máy chủ hoặc mã nguồn ứng dụng.
-* Làm quen với AWS Cloud9 như một môi trường phát triển trên Cloud, hỗ trợ viết code, chạy lệnh và thao tác với tài nguyên AWS ngay trên trình duyệt.
-* Cấu hình và sử dụng được AWS CLI cho các thao tác cơ bản như kiểm tra cấu hình, xem thông tin tài khoản, liệt kê region, kiểm tra EC2 và truy vấn thông tin dịch vụ.
-* Có khả năng kết hợp giữa giao diện Console và dòng lệnh CLI để quản lý tài nguyên AWS linh hoạt hơn trong các bài thực hành tiếp theo.
-* Xây dựng được nền tảng ban đầu để tiếp tục học các nội dung nâng cao hơn như lưu trữ, mạng, bảo mật, tự động hóa và triển khai ứng dụng trên AWS.
+* Hình thành được bức tranh tổng quan về AWS, bao gồm các nhóm dịch vụ quan trọng như compute, storage, networking, database, security và monitoring.
+* Hoàn tất bước chuẩn bị môi trường thực hành: tài khoản AWS được tạo, giao diện Console được làm quen và AWS Budgets được cấu hình để hạn chế rủi ro phát sinh chi phí.
+* Nắm được cách theo dõi chi phí bằng AWS Budgets, hiểu ý nghĩa của ngân sách, ngưỡng cảnh báo và việc kiểm soát tài chính khi thực hành trên Cloud.
+* Hiểu được vai trò của AWS Support trong quá trình học và vận hành dịch vụ, biết cách tra cứu tài liệu và xác định tình huống cần hỗ trợ kỹ thuật.
+* Nắm được nền tảng phân quyền IAM, biết vai trò của user, group, policy và role trong việc kiểm soát truy cập tài nguyên.
+* Hiểu được cấu trúc mạng cơ bản trên AWS thông qua VPC, subnet, route table, internet gateway và security group.
+* Nắm được cách EC2 hoạt động, bao gồm lựa chọn AMI, instance type, key pair, EBS volume và cấu hình bảo mật khi tạo máy chủ ảo.
+* Biết cách cấp quyền an toàn cho EC2 bằng IAM Role, tránh lưu thông tin truy cập trực tiếp trong máy chủ hoặc mã nguồn.
+* Sử dụng được AWS CLI cho các thao tác cơ bản như kiểm tra cấu hình, xem thông tin tài khoản, liệt kê region và truy vấn thông tin EC2.
+* Có nền tảng ban đầu để tiếp tục học các dịch vụ nâng cao hơn trong các tuần sau, đặc biệt là networking, storage, security và automation.
