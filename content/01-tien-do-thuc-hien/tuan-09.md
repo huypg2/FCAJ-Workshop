@@ -1,67 +1,31 @@
----
-title: "Worklog Tuần 9"
-date: 2026-06-12
-description: "Thực hành Serverless với dự án Book Store"
----
+### Tuần 9: Chuẩn bị workshop, cấu hình AWS CLI, Docker và Amazon ECR
 
-# Tuần 9: Thực hành Serverless với dự án Book Store
+### Mục tiêu tuần 9:
 
-**Thời gian:** 12/06/2026 - 18/06/2026
+* Hiểu tổng quan workshop triển khai hệ thống trên AWS.
+* Chuẩn bị môi trường thực hành gồm AWS CLI, Docker và cấu hình tài khoản AWS.
+* Build Docker image cho các service và đưa image lên Amazon ECR.
+* Nắm được vai trò của ECR trong quá trình triển khai container lên ECS Fargate.
 
-## 1. Mục tiêu trong tuần
+### Các công việc cần triển khai trong tuần này:
+| Ngày | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+| --- | --- | --- | --- | --- |
+| 15/06/2026 | - Đọc tổng quan workshop triển khai hệ thống trên AWS<br>&emsp; + Xem kiến trúc tổng thể của workshop<br>&emsp; + Xác định các thành phần chính: VPC, RDS, Load Balancer, ECS Fargate, CloudWatch và S3 Backup<br>&emsp; + Chuẩn bị danh sách tài nguyên cần tạo trong các bước tiếp theo | 15/06/2026 | 15/06/2026 | Tài liệu 5.1 Workshop Overview |
+| 16/06/2026 | - Chuẩn bị môi trường thực hành<br>&emsp; + Kiểm tra AWS account, Region sử dụng và quyền truy cập cần thiết<br>&emsp; + Cài đặt và kiểm tra AWS CLI<br>&emsp; + Cấu hình access profile để thao tác với tài nguyên AWS bằng dòng lệnh | 16/06/2026 | 16/06/2026 | Tài liệu 5.2 Prerequisite và AWS CLI Configure |
+| 17/06/2026 | - Kiểm tra source và cấu hình Docker cho ứng dụng<br>&emsp; + Rà soát Dockerfile của các service<br>&emsp; + Kiểm tra biến môi trường cần thiết trước khi build image<br>&emsp; + Chạy thử build image ở local để phát hiện lỗi trước khi đẩy lên AWS | 17/06/2026 | 17/06/2026 | Tài liệu Build Docker và mã nguồn dự án |
+| 18/06/2026 | - Tạo Amazon ECR repository cho các service<br>&emsp; + Tạo repository lưu trữ Docker image<br>&emsp; + Đăng nhập Docker vào Amazon ECR bằng AWS CLI<br>&emsp; + Gắn tag image đúng theo repository URI | 18/06/2026 | 18/06/2026 | Tài liệu 5.2.2 Build Docker ECR |
+| 19/06/2026 | - Push Docker image lên Amazon ECR và kiểm tra kết quả<br>&emsp; + Push image của từng service lên repository tương ứng<br>&emsp; + Kiểm tra image tag, digest và thời gian cập nhật trên ECR<br>&emsp; + Ghi nhận lại image URI để sử dụng khi tạo ECS Task Definition | 19/06/2026 | 19/06/2026 | Amazon ECR và tài liệu workshop |
 
-Tuần 9 tập trung vào việc thực hành kiến trúc Serverless thông qua dự án **Book Store**. Nội dung chính là xây dựng backend, frontend, xác thực người dùng, xử lý sự kiện, triển khai tự động và giám sát ứng dụng.
+### Kết quả đạt được tuần 9:
 
-Các nội dung chính trong tuần gồm: AWS Lambda, Amazon S3, Amazon DynamoDB, AWS SAM, Amazon Cognito, SQS, SNS, CI/CD, CloudWatch và AWS AppSync.
-
-## 2. Nội dung thực hiện
-
-### Serverless - Book Store Series
-
-Tìm hiểu tổng quan về dự án Book Store theo kiến trúc Serverless. Nội dung này giúp hình dung cách một ứng dụng thực tế được xây dựng bằng các dịch vụ AWS mà không cần quản lý máy chủ trực tiếp.
-
-### Backend Serverless với Lambda, S3 và DynamoDB
-
-Tìm hiểu cách xây dựng backend bằng AWS Lambda, Amazon S3 và Amazon DynamoDB. Lambda dùng để xử lý logic, S3 dùng để lưu trữ dữ liệu tĩnh hoặc file, còn DynamoDB dùng để lưu trữ dữ liệu của ứng dụng.
-
-### Phát triển Frontend cho API Serverless
-
-Tìm hiểu cách xây dựng frontend và kết nối với API Serverless. Nội dung này giúp nắm được cách frontend gửi request đến backend, nhận dữ liệu trả về và hiển thị thông tin cho người dùng.
-
-### Tự động hóa triển khai với AWS SAM
-
-Tìm hiểu AWS SAM và cách sử dụng công cụ này để định nghĩa, build và deploy ứng dụng Serverless. Nội dung này giúp việc triển khai Lambda, API và các tài nguyên liên quan trở nên nhất quán hơn.
-
-### Xác thực người dùng với Amazon Cognito
-
-Tìm hiểu Amazon Cognito để quản lý đăng ký, đăng nhập và xác thực người dùng. Nội dung này giúp ứng dụng có thể kiểm soát truy cập và bảo vệ các API yêu cầu người dùng đăng nhập.
-
-### Tên miền tùy chỉnh và SSL cho ứng dụng Serverless
-
-Tìm hiểu cách cấu hình tên miền tùy chỉnh và SSL cho ứng dụng Serverless. Nội dung này giúp ứng dụng có địa chỉ truy cập rõ ràng hơn và đảm bảo kết nối an toàn thông qua HTTPS.
-
-### Xử lý sự kiện với SQS và SNS
-
-Tìm hiểu cách sử dụng Amazon SQS và Amazon SNS trong hệ thống Serverless. SQS hỗ trợ xử lý hàng đợi bất đồng bộ, còn SNS hỗ trợ gửi thông báo theo mô hình publish/subscribe.
-
-### CI/CD cho ứng dụng Serverless
-
-Tìm hiểu quy trình CI/CD để tự động hóa việc build, test và deploy ứng dụng Serverless. Nội dung này giúp giảm thao tác thủ công và hạn chế lỗi khi cập nhật ứng dụng.
-
-### Giám sát ứng dụng Serverless
-
-Tìm hiểu cách giám sát ứng dụng Serverless bằng Amazon CloudWatch. Nội dung gồm theo dõi log, metric, lỗi thực thi Lambda và thiết lập cảnh báo khi hệ thống có vấn đề.
-
-### Xây dựng API GraphQL với AWS AppSync
-
-Tìm hiểu AWS AppSync và cách xây dựng API GraphQL cho ứng dụng. Nội dung này giúp nắm được cách frontend truy vấn dữ liệu linh hoạt hơn và kết nối với các nguồn dữ liệu như DynamoDB.
-
-## 3. Kết quả đạt được
-
-Sau tuần 9, đã nắm được cách xây dựng một ứng dụng Serverless cơ bản theo mô hình thực tế. Các thành phần như backend, frontend, xác thực, xử lý sự kiện, triển khai và giám sát được kết hợp thành một hệ thống hoàn chỉnh hơn.
-
-Ngoài ra, nội dung về AWS SAM, Cognito, SQS, SNS và AppSync giúp hiểu rõ hơn cách triển khai ứng dụng Serverless có khả năng mở rộng và dễ quản lý trên AWS.
-
-## 4. Nhận xét
-
-Tuần 9 giúp củng cố kiến thức Serverless thông qua một dự án cụ thể. Việc thực hành với Book Store giúp dễ hình dung hơn cách các dịch vụ AWS phối hợp với nhau để xây dựng một ứng dụng hoàn chỉnh, từ xử lý dữ liệu đến xác thực và giám sát.
+* Hiểu được mục tiêu của workshop là triển khai hệ thống lên AWS theo hướng sử dụng các dịch vụ quản lý thay vì tự cấu hình toàn bộ hạ tầng thủ công.
+* Nắm được vai trò của từng thành phần trong workshop như VPC dùng để tạo mạng riêng, RDS dùng cho cơ sở dữ liệu, Load Balancer dùng để phân phối request, ECS Fargate dùng để chạy container và CloudWatch dùng để giám sát.
+* Chuẩn bị được môi trường thao tác với AWS thông qua AWS CLI, giúp các bước tạo tài nguyên và kiểm tra cấu hình thuận tiện hơn.
+* Biết cách kiểm tra Region, thông tin tài khoản và quyền truy cập trước khi bắt đầu triển khai tài nguyên.
+* Rà soát được Dockerfile và các biến môi trường cần thiết để ứng dụng có thể chạy ổn định khi đưa lên container.
+* Thực hiện được quá trình build Docker image cho ứng dụng và kiểm tra lỗi build trước khi đẩy image lên AWS.
+* Tạo được Amazon ECR repository để lưu trữ image của các service phục vụ cho quá trình triển khai ECS Fargate.
+* Biết cách đăng nhập Docker vào ECR bằng AWS CLI, gắn tag image và push image lên đúng repository.
+* Kiểm tra được image đã được upload lên ECR thông qua tag, digest và thời gian cập nhật.
+* Chuẩn bị được image URI để sử dụng trong các bước tạo Task Definition ở tuần tiếp theo.
+* Hoàn thành phần chuẩn bị nền tảng cho workshop, tạo tiền đề để triển khai network, database và compute ở các tuần sau.
