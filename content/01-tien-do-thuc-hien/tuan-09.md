@@ -1,30 +1,42 @@
-### Tuần 9: Chuẩn bị môi trường triển khai và đưa Docker image lên ECR
+---
+title: "Worklog Tuần 9"
+date: 2026-06-15
+weight: 9
+chapter: false
+pre: " <b> 1.9. </b> "
+---
+{{% notice warning %}}
+⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
+{{% /notice %}}
+
+### Tuần 9: Chuẩn bị môi trường triển khai, AWS CLI và Amazon ECR
 
 ### Mục tiêu tuần 9:
 
-* Hoàn thành nhóm công việc mở đầu của workshop gồm tổng quan, chuẩn bị môi trường, cấu hình AWS CLI và build/push Docker image lên ECR.
-* Chuẩn bị đầy đủ thông tin tài khoản, Region, công cụ dòng lệnh và Docker image để phục vụ các bước triển khai tiếp theo.
-* Đảm bảo image đã có trên Amazon ECR trước khi chuyển sang phần network, database và ECS.
+* Chuẩn bị môi trường triển khai theo đúng nhóm công việc đầu của workshop.
+* Cấu hình AWS CLI để thao tác với tài nguyên AWS bằng dòng lệnh.
+* Build Docker image và đưa image lên Amazon ECR để phục vụ triển khai ECS Fargate.
 
 ### Các công việc cần triển khai trong tuần này:
 | Ngày | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
 | --- | --- | --- | --- | --- |
-| 15/06/2026 | - Xác định phạm vi triển khai theo kiến trúc workshop<br>&emsp; + Xem luồng triển khai tổng thể từ môi trường thực hành đến hạ tầng AWS<br>&emsp; + Nhận diện các nhóm tài nguyên sẽ được tạo trong workshop<br>&emsp; + Chuẩn bị thứ tự thao tác để tránh tạo thiếu hoặc sai tài nguyên | 15/06/2026 | 15/06/2026 | 5-Workshop.rar: 5.1 Workshop Overview |
-| 16/06/2026 | - Chuẩn bị điều kiện thực hành trước khi thao tác với AWS<br>&emsp; + Kiểm tra tài khoản AWS, Region và quyền truy cập cần thiết<br>&emsp; + Rà soát các công cụ local cần dùng trong quá trình triển khai<br>&emsp; + Đảm bảo môi trường máy cá nhân sẵn sàng cho các bước cấu hình tiếp theo | 16/06/2026 | 16/06/2026 | 5-Workshop.rar: 5.2 Prerequisite |
-| 17/06/2026 | - Cấu hình AWS CLI cho môi trường triển khai<br>&emsp; + Thiết lập thông tin truy cập AWS CLI<br>&emsp; + Kiểm tra cấu hình bằng lệnh xác thực tài khoản<br>&emsp; + Bảo đảm AWS CLI có thể dùng cho các thao tác ECR và tài nguyên AWS | 17/06/2026 | 17/06/2026 | 5-Workshop.rar: 5.2.1 AWS CLI Configure |
-| 18/06/2026 | - Chuẩn bị Docker image theo yêu cầu workshop<br>&emsp; + Build image từ source đã chuẩn bị<br>&emsp; + Định danh image theo repository ECR sẽ sử dụng<br>&emsp; + Thực hiện đăng nhập Docker vào Amazon ECR bằng AWS CLI | 18/06/2026 | 18/06/2026 | 5-Workshop.rar: 5.2.2 Build Docker ECR |
-| 19/06/2026 | - Hoàn tất đưa image lên Amazon ECR<br>&emsp; + Push image đã gắn tag lên ECR repository<br>&emsp; + Kiểm tra image sau khi upload<br>&emsp; + Ghi nhận image URI để dùng trong bước đăng ký task trên ECS | 19/06/2026 | 19/06/2026 | 5-Workshop.rar: 5.2.2 Build Docker ECR |
+| 15/06/2026 | - Rà soát kiến trúc triển khai và thứ tự thực hiện<br>&emsp; + Xác định các thành phần cần triển khai trên AWS<br>&emsp; + Chuẩn bị trình tự thao tác từ môi trường, image, network, database đến compute<br>&emsp; + Ghi nhận các thông tin cần dùng như Region, tên repository và tên tài nguyên | 15/06/2026 | 15/06/2026 | https://docs.aws.amazon.com/whitepapers/latest/aws-overview/introduction.html |
+| 16/06/2026 | - Chuẩn bị điều kiện thực hành trước khi tạo tài nguyên<br>&emsp; + Kiểm tra tài khoản AWS và Region sử dụng<br>&emsp; + Rà soát quyền IAM cần thiết cho quá trình triển khai<br>&emsp; + Kiểm tra Docker và các công cụ local trước khi build image | 16/06/2026 | 16/06/2026 | https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html |
+| 17/06/2026 | - Cấu hình AWS CLI trên máy thực hành<br>&emsp; + Thiết lập thông tin truy cập cho AWS CLI<br>&emsp; + Kiểm tra cấu hình bằng lệnh xác thực tài khoản<br>&emsp; + Đảm bảo CLI có thể dùng cho các bước ECR và ECS phía sau | 17/06/2026 | 17/06/2026 | https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html |
+| 18/06/2026 | - Build và chuẩn hóa Docker image cho ECR<br>&emsp; + Build image từ source dự án<br>&emsp; + Gắn tag image theo định dạng repository ECR<br>&emsp; + Đăng nhập Docker vào Amazon ECR bằng AWS CLI | 18/06/2026 | 18/06/2026 | https://docs.aws.amazon.com/AmazonECR/latest/userguide/docker-push-ecr-image.html |
+| 19/06/2026 | - Push image lên Amazon ECR và kiểm tra image<br>&emsp; + Đẩy image đã tag lên ECR repository<br>&emsp; + Kiểm tra image tag, digest và thời gian cập nhật<br>&emsp; + Lưu lại image URI để sử dụng khi tạo ECS Task Definition | 19/06/2026 | 19/06/2026 | https://docs.aws.amazon.com/AmazonECR/latest/userguide/repositories.html |
 
 ### Kết quả đạt được tuần 9:
 
-* Nắm được phạm vi của workshop và các nhóm tài nguyên AWS cần triển khai theo đúng trình tự.
-* Hoàn tất phần chuẩn bị môi trường trước khi bắt đầu tạo tài nguyên hạ tầng.
-* Kiểm tra được tài khoản, Region và quyền truy cập cần thiết phục vụ quá trình thực hành.
-* Cấu hình được AWS CLI và xác nhận CLI có thể thao tác với tài khoản AWS.
-* Hiểu được AWS CLI được sử dụng trong workshop để hỗ trợ đăng nhập ECR và thao tác tài nguyên.
-* Build được Docker image theo đúng bước chuẩn bị của workshop.
-* Gắn tag Docker image theo đúng định dạng repository ECR.
-* Đăng nhập được Docker vào Amazon ECR thông qua AWS CLI.
-* Push được image lên Amazon ECR và kiểm tra được image trong repository.
-* Lưu được image URI để sử dụng ở phần ECS Fargate.
-* Hoàn thành đúng nhóm công việc 5.1, 5.2, 5.2.1 và 5.2.2, không bổ sung thêm công việc ngoài workshop.
+* Xác định được trình tự triển khai hạ tầng và ứng dụng theo đúng hướng của workshop.
+* Chuẩn bị được thông tin Region, tên tài nguyên và các thành phần cần dùng trước khi thao tác trên AWS.
+* Kiểm tra được tài khoản AWS và các quyền IAM cần thiết để hạn chế lỗi thiếu quyền khi tạo tài nguyên.
+* Chuẩn bị được môi trường local gồm Docker và AWS CLI để hỗ trợ quá trình build image và thao tác AWS.
+* Cấu hình được AWS CLI và xác nhận tài khoản bằng dòng lệnh.
+* Hiểu được AWS CLI được dùng để đăng nhập ECR, push image và hỗ trợ các thao tác triển khai phía sau.
+* Build được Docker image từ source dự án theo đúng bước chuẩn bị triển khai container.
+* Gắn tag image theo đúng định dạng repository Amazon ECR.
+* Đăng nhập được Docker vào Amazon ECR bằng AWS CLI.
+* Push được image lên ECR repository và kiểm tra được image sau khi upload.
+* Ghi nhận được image URI để dùng cho phần đăng ký ECS Task Definition ở tuần tiếp theo.
+* Hoàn thành nhóm công việc chuẩn bị, AWS CLI và ECR đúng theo nội dung workshop nhưng nguồn tham khảo đã chuyển sang tài liệu AWS bên ngoài.
